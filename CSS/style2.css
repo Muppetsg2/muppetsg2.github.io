@@ -1,0 +1,297 @@
+/*Basic*/
+
+body, html{
+    height:100%;
+    margin:0;
+    font-size:16px;
+    font-family: "Lato", sans-serif;
+    font-weight:400;
+    line-height:1.8em;
+    color:#666;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.pimg1S{
+    position:relative;
+    /*opacity:0.70;*/
+    backgroun-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+    
+    background-image: url('../IMG/ShooterBG.png');
+    min-height: 70%;
+}
+
+
+.pimg1Mkk{
+    position:relative;
+    /*opacity:0.70;*/
+    backgroun-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+    
+    background-image: url('../IMG/mkkBG.png');
+    min-height: 70%;
+}
+
+.pimg1Diler{
+    position:relative;
+    /*opacity:0.70;*/
+    backgroun-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+    
+    background-image: url('../IMG/DilerBG.png');
+    min-height: 70%;
+}
+
+.pimg1TW{
+    position:relative;
+    /*opacity:0.70;*/
+    backgroun-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+    
+    background-image: url('../IMG/TWBG.png');
+    min-height: 70%;
+}
+
+
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-end{
+    text-align: left;
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.section-end h5{
+    text-align: right;
+}
+
+.section-end p a{
+    text-decoration: none;
+    color: #ddd;
+}
+
+
+.Img{
+    display: inline-block;
+    width: 216px;
+    height: 216px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 30%;
+    float: left;
+    margin-top: -120px;
+    position: relative;
+}
+
+
+.Text{
+    text-align: right;
+}
+
+.bgbtn{
+    width: 100%;
+    margin:0;
+    padding: 0;
+    text-align: right;
+    margin-top: -30px;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    
+    background-color: orange;
+    
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    
+    transition: .5s;
+}
+
+
+.btn:hover{
+    background-color: orangered;
+    color:#f1f1f1;
+}
+
+
+
+
+/*Social Media*/
+
+#Instagram{
+    vertical-align: middle;
+}
+
+#Gmail{
+    vertical-align: middle;
+}
+
+#Youtube{
+    vertical-align: middle;
+}
+
+#Facebook{
+    vertical-align: middle;
+}
+
+
+
+
+.ptext{
+    position:absolute;
+    top: 50%;
+    width:100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    
+    /*background: linear-gradient(to right, #ffdd38 0%, #ff5eb9 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;*/
+}
+
+.ptext .border-trans{
+    background-color: transparent;
+    padding: 20px;
+}
+
+.pback{
+    position:absolute;
+    top: 2%;
+    right: 1%;
+    width:100%;
+    text-align: right;
+}
+
+.pback a img{
+    margin:0;
+}
+
+.pback a{
+    display: inline-block;
+    text-align: center;
+    height:70px;
+    width:70px;
+    background-color: white;
+    border-radius: 30%;
+    vertical-align: middle;
+}
+
+
+
+/*Phone*/
+
+@media(max-width:568px){
+    .pimg1S{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .pimg1Mkk{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .pimg1Diler{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .pimg1TW{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .Img{
+        width: 108px;
+        height: 108px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 30%;
+    }
+
+
+    .Text{
+        text-align: justify;
+    }
+
+    .bgbtn{
+        width: 100%;
+        margin:0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .btn{
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+
+        background-color: orange;
+
+
+        padding: 10px;
+
+        border-radius: 8px;
+
+        transition: .5s;
+    }

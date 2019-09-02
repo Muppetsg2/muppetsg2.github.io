@@ -1,0 +1,421 @@
+/*Basic*/
+
+body, html{
+    height:100%;
+    margin:0;
+    font-size:16px;
+    font-family: "Lato", sans-serif;
+    font-weight:400;
+    line-height:1.8em;
+    color:#666;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+/*Navigation Bar*/
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100px;
+    padding: 10px, 100px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+nav.black{
+    background: rgba(0,0,0,.8);
+    height: 80px;
+    padding: 10px 27px;
+}
+
+nav ul{
+    float:right;
+    margin:0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    line-height: 80px;
+    padding: 5px 30px;
+    margin: 7px;
+    
+    color: #fff;
+    text-decoration:none;
+    text-transform: uppercase;
+    
+    font-size: 1.5vw;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    
+    border-color: black;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    
+    transition: .5s;
+}
+
+nav.black ul li a{
+    border-color:floralwhite;
+    background-color: floralwhite;
+    color: #282e34;
+    line-height: 60px;
+}
+
+nav ul li a:hover{
+    border: 0px solid transparent;
+    border-color:floralwhite;
+    background-color: floralwhite;
+    color: #282e34;
+}
+
+nav.black ul li a:hover{
+    border: 0px solid transparent;
+    border-color: linear-gradient(to bottom right, #fbd140, #fe5fbe);
+    background: linear-gradient(to bottom right, #fbd140, #fe5fbe);
+    color: #282e34;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Images*/
+
+.pimg1, .pimg2, .pimg3, .pimg4{
+    position:relative;
+    /*opacity:0.70;*/
+    backgroun-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+}
+
+.pimg1{
+    background-image: url('../IMG/Background%20v3.png');
+    min-height: 100%;
+}
+
+.pimg2{
+    background-image: url('../IMG/BannerNewAge.png');
+    min-height: 70%;
+}
+
+.pimg3{
+    background-image: url('../IMG/abstract-art-artistic-1328891.jpg');
+    min-height: 50%;
+}
+
+.pimg4{
+    background-image: url('../IMG/LovelyBackground.png');
+    min-height: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Sections*/
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.section-end{
+    text-align: left;
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.section-end h5{
+    text-align: right;
+}
+
+.section-end p a{
+    text-decoration: none;
+    color: #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Games*/
+
+.GameBTN{
+    width: 100%;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    width: 185px;
+    height: 185px;
+    background-color: white;
+    border-radius: 30%;
+    margin: 20px;
+    position: relative;
+    
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+}
+
+.imagebtn{
+    height: 185px;
+    width: 185px;
+    border-radius: 30%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#Shooter{
+    background-image: url('../IMG/shooter.png');
+}
+
+#Mkk{
+    background-image: url('../IMG/mkk.png');
+}
+
+#Diler{
+    background-image: url('../IMG/diler.png');
+}
+
+#TW{
+    background-image: url('../IMG/thewizards.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Videos*/
+
+.VideosBG{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.VideosBG iframe{
+    width:56vw;
+    height:31.5vw;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Arrow*/
+
+.parrow{
+    position:absolute;
+    top: 90%;
+    width:100%;
+    text-align: center; 
+}
+.parrow a img{
+    margin:0;
+}
+
+.parrow a h4{
+    background-size: cover;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.parrow a{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    height:20px;
+    width:80px;
+    vertical-align: bottom;
+}
+
+
+
+
+
+
+
+/*Social Media*/
+
+#Instagram{
+    vertical-align: middle;
+}
+
+#Gmail{
+    vertical-align: middle;
+}
+
+#Youtube{
+    vertical-align: middle;
+}
+
+#Facebook{
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+/*Text*/
+
+.ptext{
+    position:absolute;
+    top: 50%;
+    width:100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    
+    /*background: linear-gradient(to right, #ffdd38 0%, #ff5eb9 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;*/
+}
+
+.ptext .border-trans{
+    background-color: transparent;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Phone*/
+
+@media(max-width:568px){
+    .pimg1, .pimg2, .pimg3, .pimg4{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .pimg2{
+        background-image: url('../IMG/logoNewAge.png');
+    }
+}
