@@ -408,7 +408,7 @@ nav.black ul li a:hover{
 
 /*Phone*/
 
-@media(max-width:568px){
+@media(max-width:720px){
     .pimg1, .pimg2, .pimg3, .pimg4{
         background-attachment: scroll;
         background-size: cover;

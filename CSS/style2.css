@@ -28,7 +28,7 @@ html{
     */
     background-attachment: fixed;
     
-    background-image: url('../IMG/ShooterBG.png');
+    background-image: url('../IMG/Shooter%20bg%202.png');
     min-height: 70%;
 }
 
@@ -235,7 +235,7 @@ html{
 
 /*Phone*/
 
-@media(max-width:568px){
+@media(max-width:720px){
     .pimg1S{
         background-attachment: scroll;
         background-size: cover;
