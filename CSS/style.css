@@ -416,5 +416,6 @@ nav.black ul li a:hover{
     
     .pimg2{
         background-image: url('../IMG/logoNewAge.png');
+        min-height: 40%;
     }
 }
