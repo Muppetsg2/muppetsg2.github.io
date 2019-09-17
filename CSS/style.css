@@ -399,15 +399,6 @@ nav.black ul li a:hover{
 
 
 
-@viewport{
-    zoom: 1.0;
-    width: extend-to-zoom;
-}
-
-@-ms-viewport{
-    width: extend-to-zoom;
-    zoom: 1.0;
-}
 
 
 
@@ -416,7 +407,7 @@ nav.black ul li a:hover{
 
 /*Phone*/
 
-@media(max-width:1080px){
+@media(max-width:1280px){
     .pimg1, .pimg2, .pimg3, .pimg4{
         background-attachment: scroll;
         background-size: cover;
