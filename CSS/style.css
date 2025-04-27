@@ -134,7 +134,7 @@ nav.black ul li a:hover{
 }
 
 .pimg3{
-    background-image: url('../IMG/abstract-art-artistic-1328891.jpg');
+    background-image: url('../IMG/abstract_small.jpg');
     min-height: 50%;
 }
 
@@ -233,6 +233,18 @@ nav.black ul li a:hover{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#ThereAreSigns{
+    background-image: url('../IMG/TASIcon.png');
+}
+
+#BubbleHunt{
+    background-image: url('../IMG/BubbleHuntWithName.png');
+}
+
+#WindRider{
+    background-image: url('../IMG/WindRider.png');
 }
 
 #Shooter{
