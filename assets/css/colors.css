@@ -1,0 +1,81 @@
+/*
+   =====================================================================
+   colors.css – The ONLY place with colors on the entire page.
+   light-dark(LIGHT, DARK) – the browser automatically selects the value
+   based on the theme (system-wide or one chosen via a button).
+   =====================================================================
+*/
+
+/* Which theme is active */
+:root {
+  color-scheme: light dark;     /* default: as in the system */
+}
+:root[data-theme="light"] {
+  color-scheme: light;          /* the light one is chosen */
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;           /* the dark one is chosen */
+}
+
+:root {
+  /* ---------- Colors used more than once ---------- */
+  --creamy: #f5f1ea;
+  --light-gray: #aba4b8;
+  --dark-gray: #332d3f;
+  --black-gray: #241f2e;
+  --black: #100e16;
+
+  /* ---------- Muppetsg2 Logo colorscheme ---------- */
+  --yellow: #ffeb2a;
+  --pink: #ff2aed;
+  --dark-pink: #b01da4;
+  --grad: linear-gradient(90deg, var(--yellow), var(--pink));
+  --on-grad: var(--black);                                     /* text on a gradient */
+  --on-grad-muted: #2a2233;                                  /* small text on a gradient */
+  --glow: rgb(255 95 184 / 0.35);                            /* button glow */
+
+  /* ---------- Page ---------- LIGHT DARK */
+  --bg: light-dark(#f7f6fa, var(--black));                   /* page background */
+  --bg-2: light-dark(#efedf4, #13111a);                    /* every other section */
+  --surface: light-dark(#ffffff, #1a1722);                 /* cards, panels */
+  --surface-2: light-dark(#ece9f2, var(--black-gray));       /* buttons, icons */
+  --line: light-dark(#e4e0eb, var(--black-gray));            /* lines between sections */
+  --border: light-dark(#ddd8e6, var(--dark-gray));           /* card borders */
+  --border-2: light-dark(#cfc8db, #3a3347);                /* button frames */
+
+  /* ---------- Text ---------- LIGHT DARK */
+  --text: light-dark(#17141f, var(--creamy));                /* headers */
+  --text-2: light-dark(#3a3446, #c9c2d6);                  /* paragraphs */
+  --muted: light-dark(#5b5468, var(--light-gray));           /* minor text */
+  --accent: light-dark(#9c4a00, var(--yellow));              /* „01 // projects”, focus */
+  --accent-2: light-dark(var(--dark-pink), var(--pink));       /* ★ awards */
+
+  /* ---------- Shadows ---------- LIGHT DARK */
+  --shadow: light-dark(rgb(40 30 60 / 0.14), rgb(0 0 0 / 0.45));
+  --shadow-strong: rgb(0 0 0 / 0.4);
+
+  /* ---------- On Images (always dark) ---------- */
+  --overlay: rgb(16 14 22 / 0.85);
+  --overlay-soft: rgb(16 14 22 / 0.3);
+  --on-overlay: var(--creamy);
+  --media-bg: #0b0a10;
+  --placeholder-from: #2c2238;
+  --placeholder-to: #120f18;
+  --placeholder-text: var(--creamy);
+
+  /* ---------- Code window (always dark, like an IDE) ---------- */
+  --code-bg: #16131e;
+  --code-bar: #1a1722;
+  --code-border: #2e2839;
+  --code-rule: var(--dark-gray);
+  --code-text: var(--creamy);
+  --code-muted: var(--light-gray);
+  --code-comment: #8c859a;
+  --code-keyword: var(--pink);
+  --code-type: var(--yellow);
+  --code-string: #b9f3c8;
+  --code-number: #9ecbff;
+  --dot-red: #ff5f57;
+  --dot-yellow: #febc2e;
+  --dot-green: #28c840;
+}
