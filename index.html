@@ -15,7 +15,41 @@
     </head>
     <body id="top">
         <main>
-            <h1>Hello, Muppetsg2!</h1>
+            <!-- HERO -->
+            <section class="container hero">
+                <div class="hero-text">
+                    <p class="prompt">&gt; ./muppetsg2 --whoami<span class="cursor">_</span></p>
+                    <h1>I build games — and the engines behind them.</h1>
+                    <div class="grad-line"></div>
+                    <p class="lead">C++ programmer focused on games, game engines and graphics. I make games in Unreal Engine, Unity and on my own custom engines — solo and in teams.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-large" href="#projects">
+                            See my projects
+                            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a class="btn btn-secondary btn-large" href="https://github.com/Muppetsg2" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+
+                <figure class="code-window" aria-hidden="true">
+                    <div class="code-bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>Muppetsg2.cpp
+                    </div>
+                    <pre>
+<span class="p">#include</span> <span class="s">&lt;engine/Core.hpp&gt;</span>
+
+<span class="k">class</span> <span class="cs">Muppetsg2</span> <span class="k">final</span> : <span class="k">public</span> <span class="cs">GameDev</span> {
+<span class="k">public</span>:
+    <span class="ns">std</span>::<span class="cs">array</span>&lt;<span class="ns">std</span>::<span class="cs">string_view</span>, <span class="n">3</span>&gt; <span class="v">engines</span> {
+        <span class="s">"Custom"</span>, <span class="s">"Unreal"</span>, <span class="s">"Unity"</span>
+    };
+
+    <span class="k">void</span> <span class="f">Update</span>(<span class="k">float</span> <span class="v">dt</span>) <span class="k">override</span> {
+        <span class="bk">if</span> (<span class="v">idea</span>.<span class="f">IsGood</span>()) <span class="f">Ship</span>(<span class="f">Build</span>(<span class="v">idea</span>));
+    }
+};</pre>
+                </figure>
+            </section>
         </main>
     </body>
 </html>

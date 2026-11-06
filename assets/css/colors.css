@@ -23,6 +23,7 @@
   --light-gray: #aba4b8;
   --dark-gray: #332d3f;
   --black-gray: #241f2e;
+  --light-black: #1a1722;
   --black: #100e16;
 
   /* ---------- Muppetsg2 Logo colorscheme ---------- */
@@ -37,7 +38,7 @@
   /* ---------- Page ---------- LIGHT DARK */
   --bg: light-dark(#f7f6fa, var(--black));                   /* page background */
   --bg-2: light-dark(#efedf4, #13111a);                    /* every other section */
-  --surface: light-dark(#ffffff, #1a1722);                 /* cards, panels */
+  --surface: light-dark(#ffffff, var(--light-black));                 /* cards, panels */
   --surface-2: light-dark(#ece9f2, var(--black-gray));       /* buttons, icons */
   --line: light-dark(#e4e0eb, var(--black-gray));            /* lines between sections */
   --border: light-dark(#ddd8e6, var(--dark-gray));           /* card borders */
@@ -65,15 +66,19 @@
 
   /* ---------- Code window (always dark, like an IDE) ---------- */
   --code-bg: #16131e;
-  --code-bar: #1a1722;
+  --code-bar: var(--light-black);
   --code-border: #2e2839;
-  --code-rule: var(--dark-gray);
-  --code-text: var(--creamy);
-  --code-muted: var(--light-gray);
-  --code-comment: #8c859a;
-  --code-keyword: var(--pink);
-  --code-type: var(--yellow);
-  --code-string: #b9f3c8;
+  --code-mutted: var(--light-gray);
+  --code-text: var(--light-gray);
+  --code-comment: #777283;
+  --code-keyword: #ff5cf0;
+  --code-branch-keyword: #c79bff;
+  --code-preprocessor: var(--light-gray);
+  --code-class: var(--yellow);
+  --code-namespace: var(--creamy);
+  --code-variable: var(--creamy);
+  --code-function: #ff912a;
+  --code-string: #a6e455;
   --code-number: #9ecbff;
   --dot-red: #ff5f57;
   --dot-yellow: #febc2e;
