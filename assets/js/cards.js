@@ -95,3 +95,13 @@ export function projectCard(p, activeTag) {
         </div>
     </article>`;
 }
+
+/* ---------- Small card (suggestions on page 404) ---------- */
+export function miniCard(p) {
+    const image = p.icon || p.cover;
+    return `
+    <a class="mini-card" href="${projectUrl(p)}">
+        ${image ? `<img src="${href(image)}" alt="" loading="lazy">` : ""}
+        <span><strong>${esc(p.title)}</strong><small>${esc((p.tags || []).slice(0, 3).join(" · "))}</small></span>
+    </a>`;
+}
