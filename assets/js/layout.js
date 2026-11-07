@@ -8,6 +8,38 @@ import { socials } from "../../data/socials.js";
 import { icon } from "./icons.js";
 import { esc, href, targetAttrs } from "./utils.js";
 
+/* ---------- Theme ---------- */
+const root = document.documentElement;
+const systemLight = window.matchMedia("(prefers-color-scheme: light)");
+
+function currentTheme() {
+    return root.dataset.theme || (systemLight.matches ? "light" : "dark");
+}
+
+function setTheme(next) {
+    const system = systemLight.matches ? "light" : "dark";
+    try {
+        if (next === system) {
+            delete root.dataset.theme;
+            localStorage.removeItem("theme");
+        } else {
+            root.dataset.theme = next;
+            localStorage.setItem("theme", next);
+        }
+    } catch {
+        root.dataset.theme = next;
+    }
+    updateThemeButton();
+}
+
+function updateThemeButton() {
+    const btn = document.querySelector("[data-theme-toggle]");
+    if (!btn) return;
+    const light = currentTheme() === "light";
+    btn.innerHTML = icon(light ? "moon" : "sun");
+    btn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+}
+
 /* ---------- Menu ---------- */
 export function renderHeader() {
     const el = document.getElementById("site-header");
@@ -32,8 +64,15 @@ export function renderHeader() {
         </div>
         <div class="nav-actions">
             ${iconLinks}
+            <button type="button" class="icon-btn" data-theme-toggle></button>
         </div>
     </nav>`;
+
+    el.querySelector("[data-theme-toggle]").addEventListener("click", () => {
+        setTheme(currentTheme() === "light" ? "dark" : "light");
+    });
+    systemLight.addEventListener("change", updateThemeButton);
+    updateThemeButton();
 }
 
 /* ---------- Footer ---------- */
