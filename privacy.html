@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Privacy policies – Muppetsg2</title>
+        <meta name="description" content="Privacy policies of the Muppetsg2 mobile apps.">
+        <link rel="icon" href="assets/img/favicon.png" type="image/png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+        
+        <link rel="stylesheet" href="assets/css/colors.css">
+        <link rel="stylesheet" href="assets/css/fonts.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <script src="assets/js/theme.js"></script>
+        <script type="module" src="assets/js/privacy.js"></script>
+    </head>
+    <body id="top">
+        <header id="site-header" class="site-header"></header>
+
+        <main class="container legal">
+            <!-- List of all policies (privacy.html without ?id) -->
+            <section id="policy-list" hidden>
+                <p class="eyebrow">// privacy policies</p>
+                <h1>Privacy policies</h1>
+                <p class="lead legal-lead">Privacy policies of my mobile apps.</p>
+                <div id="policy-cards" class="policy-grid"></div>
+            </section>
+
+            <!-- Unknown ?id -->
+            <section id="policy-missing" hidden>
+                <p class="eyebrow">// 404</p>
+                <h1>Policy not found</h1>
+                <p class="lead legal-lead">There is no privacy policy with this address.</p>
+                <a class="btn btn-primary" href="privacy.html">All privacy policies</a>
+            </section>
+
+            <!-- One policy (privacy.html?id=…) – populated by assets/js/privacy.js -->
+            <article id="policy" hidden>
+                <a class="back-link" id="policy-back" href="privacy.html">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                    <span id="policy-back-label">All privacy policies</span>
+                </a>
+                <p class="eyebrow">// privacy policy</p>
+                <h1 id="policy-title"></h1>
+                <div id="policy-tags" class="tag-list is-static legal-meta"></div>
+
+                <div class="legal-summary">
+                    <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    <p><strong>In short:</strong> <span id="policy-summary"></span></p>
+                </div>
+
+                <div id="policy-sections"></div>
+
+                <div class="legal-contact">
+                    <div>
+                        <h2>Contact Us</h2>
+                        <p id="policy-contact"></p>
+                    </div>
+                    <a class="btn btn-primary" id="policy-mail" href="#">Email the developer</a>
+                </div>
+            </article>
+        </main>
+
+        <footer id="site-footer" class="site-footer"></footer>
+    </body>
+</html>

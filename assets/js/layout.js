@@ -86,6 +86,7 @@ export function renderFooter() {
             <span>© ${new Date().getFullYear()} Marceli Antosik</span>
         </div>
         <div class="footer-links">
+            <a href="privacy.html">Privacy policies</a>
             <a href="#top">Back to top ↑</a>
         </div>
     </div>`;

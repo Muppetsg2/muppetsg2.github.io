@@ -5,6 +5,7 @@
 */
 
 import { projects } from "../../data/projects.js";
+import { privacyPolicies } from "../../data/privacy.js";
 import { renderHeader, renderFooter } from "./layout.js";
 import { tagList, primaryLink } from "./cards.js";
 import { icon, LINK_ICONS } from "./icons.js";
@@ -49,6 +50,15 @@ function renderProject(p) {
     : `<div class="video is-static">${posterImg}</div>`;
 
     const description = (p.description || [p.summary]).map((t) => `<p>${esc(t)}</p>`).join("");
+
+    const policy = privacyPolicies.find((x) => x.project === p.id);
+    const policyLink = policy
+    ? `<a class="policy-link" href="privacy.html?id=${encodeURIComponent(policy.id)}">
+            ${icon("shield", 18)}
+            <span><strong>Privacy policy</strong><small>how this game handles your data</small></span>
+            ${icon("arrowRight", 16, "arrow")}
+        </a>`
+    : "";
 
     const mainLink = primaryLink(p);
     const links = (p.links || []).length
@@ -95,6 +105,7 @@ function renderProject(p) {
                 <h2 class="panel-title">Download</h2>
                 <div class="download-list">${links}</div>
                 ${info}
+                ${policyLink}
             </aside>
         </div>
     </div>`;
