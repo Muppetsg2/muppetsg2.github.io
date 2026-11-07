@@ -5,7 +5,7 @@
 */
 
 import { projects } from "../../data/projects.js";
-import { renderHeader, renderFooter } from "./layout.js";
+import { renderHeader, renderFooter, renderContacts } from "./layout.js";
 import { featuredCard, projectCard, tagButton } from "./cards.js";
 import { countTags, esc } from "./utils.js";
 import { icon } from "./icons.js";
@@ -63,4 +63,5 @@ document.addEventListener("click", (e) => {
 
 renderHeader();
 renderFooter();
+renderContacts();
 renderProjects();

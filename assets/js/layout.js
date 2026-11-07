@@ -90,3 +90,19 @@ export function renderFooter() {
         </div>
     </div>`;
 }
+
+/* ---------- Contact cards (home page) ---------- */
+export function renderContacts() {
+    const el = document.getElementById("contact-list");
+    if (!el) return;
+    el.innerHTML = socials
+        .map(
+            (s) => `
+            <a class="contact-card" href="${href(s.url)}"${targetAttrs(s.url)}>
+                <span class="contact-icon">${icon(s.icon)}</span>
+                <span class="contact-text"><strong>${esc(s.name)}</strong><span>${esc(s.handle)}</span></span>
+                ${icon("arrowUpRight", 16, "contact-arrow")}
+            </a>`
+        )
+        .join("");
+}
