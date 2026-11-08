@@ -68,8 +68,9 @@
   --code-bg: #16131e;
   --code-bar: var(--light-black);
   --code-border: #2e2839;
-  --code-mutted: var(--light-gray);
+  --code-muted: var(--light-gray);
   --code-text: var(--light-gray);
+  --code-rule: var(--dark-gray);
   --code-comment: #777283;
   --code-keyword: #ff5cf0;
   --code-branch-keyword: #c79bff;

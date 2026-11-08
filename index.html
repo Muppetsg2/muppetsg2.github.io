@@ -33,9 +33,12 @@
                     <div class="hero-actions">
                         <a class="btn btn-primary btn-large" href="#projects">
                             See my projects
-                            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <span data-icon="arrowRight" class="arrow"></span>
                         </a>
-                        <a class="btn btn-secondary btn-large" href="https://github.com/Muppetsg2" target="_blank" rel="noopener">GitHub</a>
+                        <a class="btn btn-secondary btn-large" href="https://github.com/Muppetsg2" target="_blank" rel="noopener">
+                            <span data-icon="github"></span>
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
@@ -76,22 +79,42 @@
 
             <!-- ABOUT -->
             <section id="about" class="section">
-                <div class="container about">
-                    <div class="about-text">
-                        <p class="eyebrow">02 // about</p>
-                        <h2 class="section-title">About me</h2>
-                        <p>I'm a programmer who specialises in C++. I write games, the engines they run on, and the graphics code that puts them on screen — in Unreal Engine, Unity and on engines built from scratch.</p>
-                        <p>Outside of code I like taking photos of nature. I'm always open to collaborating on new projects — drop me a message.</p>
+                <div class="container">
+                    <div class="about">
+                        <div class="about-text">
+                            <p class="eyebrow">02 // about</p>
+                            <h2 class="section-title">About me</h2>
+                            <p>I'm a programmer who specialises in C++. I write games, the engines they run on, and the graphics code that puts them on screen — in Unreal Engine, Unity and on engines built from scratch.</p>
+                            <p>Outside of code I like taking photos of nature. I'm always open to collaborating on new projects — drop me a message.</p>
+                        </div>
+                        <div class="toolbox">
+                            <p class="toolbox-title">// toolbox</p>
+                            <dl>
+                                <div><dt>main language</dt><dd class="cs">C++</dd></div>
+                                <div><dt>also</dt><dd>Python · C# · C</dd></div>
+                                <div><dt>engines</dt><dd>Custom · Unreal · Unity</dd></div>
+                                <div><dt>graphics</dt><dd>OpenGL · Vulkan</dd></div>
+                                <div><dt>status</dt><dd class="s">● open to collab</dd></div>
+                            </dl>
+                        </div>
                     </div>
-                    <div class="toolbox">
-                        <p class="toolbox-title">// toolbox</p>
-                        <dl>
-                        <div><dt>main language</dt><dd class="cs">C++</dd></div>
-                        <div><dt>also</dt><dd>Python · C# · C</dd></div>
-                        <div><dt>engines</dt><dd>Custom · Unreal · Unity</dd></div>
-                        <div><dt>graphics</dt><dd>OpenGL · Vulkan</dd></div>
-                        <div><dt>status</dt><dd class="s">● open to collab</dd></div>
-                        </dl>
+
+                    <div class="pillars">
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="itch" data-size="22"></span></span>
+                            <h3>Games</h3>
+                            <p>Gameplay programming in Unreal, Unity and custom tech — from game jams and competitions to released titles.</p>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="chip" data-size="22"></span></span>
+                            <h3>Game engines</h3>
+                            <p>Engine architecture in modern C++: object-component systems, resource management, tooling and editors.</p>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="layers" data-size="22"></span></span>
+                            <h3>Graphics programming</h3>
+                            <p>Real-time rendering with OpenGL and Vulkan.</p>
+                        </div>
                     </div>
                 </div>
             </section>

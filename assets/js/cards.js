@@ -26,7 +26,7 @@ export function primaryLink(p) {
 
 /** Tile with a title, when the project has no image */
 export function placeholder(p, size = "") {
-    return `<div class="media-placeholder ${size}"><span>${esc(p.title)}</span></div>`;
+    return `<div class="media-placeholder ${size}" data-short="${esc(p.title.slice(0, 2))}"><span>${esc(p.title)}</span></div>`;
 }
 
 /* ---------- Large card (featured: true) ---------- */
@@ -93,6 +93,7 @@ export function projectCard(p, activeTag) {
                 ${quick}
             </div>
         </div>
+        <span class="card-chevron" aria-hidden="true">${icon("chevronRight", 18)}</span>
     </article>`;
 }
 
@@ -101,7 +102,7 @@ export function miniCard(p) {
     const image = p.icon || p.cover;
     return `
     <a class="mini-card" href="${projectUrl(p)}">
-        ${image ? `<img src="${href(image)}" alt="" loading="lazy">` : ""}
-        <span><strong>${esc(p.title)}</strong><small>${esc((p.tags || []).slice(0, 3).join(" · "))}</small></span>
+        ${image ? `<img src="${href(image)}" alt="" loading="lazy">` : `<span class="mini-placeholder">${esc(p.title.slice(0, 2))}</span>`}
+        <span class="mini-text"><strong>${esc(p.title)}</strong><small>${esc((p.tags || []).slice(0, 3).join(" · "))}</small></span>
     </a>`;
 }

@@ -10,6 +10,8 @@ import { renderHeader, renderFooter } from "./layout.js";
 import { tagList, primaryLink } from "./cards.js";
 import { icon, LINK_ICONS } from "./icons.js";
 import { esc, href, targetAttrs, parseVideo } from "./utils.js";
+import { showUpdated } from "./updated.js";
+import { noteNow, fillDownloadNotes } from "./downloads.js";
 
 const id = new URLSearchParams(location.search).get("id");
 const project = projects.find((x) => x.id === id);
@@ -66,7 +68,7 @@ function renderProject(p) {
         .map(
             (l) => `
             <a class="btn-download${l === mainLink ? " is-primary" : ""}" href="${href(l.url)}"${targetAttrs(l.url)}>
-                <span><strong>${esc(l.label)}</strong>${l.note ? `<small>${esc(l.note)}</small>` : ""}</span>
+                <span><strong>${esc(l.label)}</strong>${l.note ? `<small data-note="${esc(l.note)}" data-url="${esc(l.url)}">${esc(noteNow(l.note, l.url))}</small>` : ""}</span>
                 ${icon(LINK_ICONS[l.kind] || "external", 20, "arrow")}
             </a>`
         )
@@ -74,7 +76,7 @@ function renderProject(p) {
     : `<p class="muted">No downloads available right now.</p>`;
 
     const info = p.info
-    ? `<dl class="info-table">${Object.entries(p.info)
+    ? `<dl class="info-table" id="project-info">${Object.entries(p.info)
         .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
         .join("")}</dl>`
     : "";
@@ -109,6 +111,9 @@ function renderProject(p) {
             </aside>
         </div>
     </div>`;
+
+    fillDownloadNotes(main);
+    showUpdated(p.updated);
 }
 
 document.addEventListener("click", (e) => {

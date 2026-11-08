@@ -25,13 +25,28 @@ const PATHS = {
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
     moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
     close: '<path d="M18 6L6 18M6 6l12 12"/>',
+    menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    chevronRight: '<path d="M9 6l6 6-6 6"/>',
     shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
+    chip: '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 2v4M14 2v4M10 18v4M14 18v4M2 10h4M2 14h4M18 10h4M18 14h4"/>',
+    layers: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>',
 };
 
 /** Returns the <svg> code. name – name from the list above, size – size in px, extraClass – additional class. */
 export function icon(name, size = 20, extraClass = "") {
     const body = PATHS[name] || PATHS.link;
     return `<svg class="icon ${extraClass}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+}
+
+/** 
+ * Replaces every <span data-icon="name"> on the page with an icon from the list above.
+ * data-size – size in px (default is 18);
+ * the tag's class is applied to the <svg> element (e.g., class="arrow").
+*/
+export function fillIcons(root = document) {
+    root.querySelectorAll("[data-icon]").forEach((el) => {
+        el.outerHTML = icon(el.dataset.icon, Number(el.dataset.size) || 18, el.className);
+    });
 }
 
 /** Which icon corresponds to which type of link (the `kind` field in `projects.js`). */

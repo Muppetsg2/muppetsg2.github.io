@@ -43,6 +43,12 @@
             { title: "Title1", text: "Description" }
         ],
         stack: ["Unity", "C#"], // Optional, array of libraries / tools
+        // Optional, the page shows only the month: “March 2026”
+        // Possible formats:
+        // - "2026-03"                   - manually
+        // - "2026-03-09"                - the full date works too
+        // - "github:Muppetsg2/Shooter"  - date of the latest release on GitHub
+        updated: "2026-03-09"
     },
 */
 
@@ -64,8 +70,9 @@ export const projects = [
         trailer: "https://www.youtube.com/watch?v=d_IHK5qQBHs",
         links: [
             { label: "Android", note: "Google Play", url: "https://play.google.com/store/apps/details?id=com.Muppetsg2.Shooter", kind: "store", primary: true },
-            { label: "Windows 64-bit", note: ".exe · 30 MB", url: "Downloads/Shooter 1.5.0 x64.exe", kind: "download" },
+            { label: "Windows 64-bit", note: "{ext} · {size}", url: "Downloads/Shooter 1.5.0 x64.exe", kind: "download" },
         ],
-        info: { engine: "Unity", "version.pc": "1.5.0", "version.android": "1.5.0" },
+        info: { engine: "Unity", "version.pc": "1.5.0", "version.android": "1.5.9" },
+        updated: "2026-03",
     },
 ];

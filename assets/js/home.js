@@ -33,8 +33,7 @@ function renderProjects() {
         .join("");
 
     const allButton = `<button type="button" class="tag${activeTag ? "" : " is-on"}" data-tag-all aria-pressed="${!activeTag}">All <span class="tag-count">${projects.length}</span></button>`;
-    document.getElementById("tag-filter").innerHTML =
-    allButton + allTags.map(({ tag, count }) => tagButton(tag, activeTag, count)).join("");
+    document.getElementById("tag-filter").innerHTML = allButton + allTags.map(({ tag, count }) => tagButton(tag, activeTag, count)).join("");
 
     const shown = activeTag ? projects.filter((p) => (p.tags || []).includes(activeTag)) : projects;
 
@@ -54,7 +53,7 @@ document.addEventListener("click", (e) => {
 
     const tag = allBtn ? null : tagBtn.dataset.tag;
     const outsideFilter = !e.target.closest("#tag-filter, #result-info");
-    setActiveTag(tag === activeTag ? null : tag); // klik w aktywny tag = wyłącz
+    setActiveTag(tag === activeTag ? null : tag);
 
     if (outsideFilter) {
         document.getElementById("all-projects").scrollIntoView({ behavior: "smooth", block: "start" });

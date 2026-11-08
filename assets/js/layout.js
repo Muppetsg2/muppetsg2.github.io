@@ -5,7 +5,7 @@
 */
 
 import { socials } from "../../data/socials.js";
-import { icon } from "./icons.js";
+import { icon, fillIcons } from "./icons.js";
 import { esc, href, targetAttrs } from "./utils.js";
 
 /* ---------- Theme ---------- */
@@ -48,7 +48,7 @@ export function renderHeader() {
     // Icons only for links with header: true
     const iconLinks = socials
         .filter((s) => s.header)
-        .map((s) => `<a class="icon-btn" href="${href(s.url)}"${targetAttrs(s.url)} aria-label="${esc(s.name)}">${icon(s.icon)}</a>`)
+        .map((s) => `<a class="icon-btn" href="${href(s.url)}"${targetAttrs(s.url)} aria-label="${esc(s.name)}">${icon(s.icon)}<span class="nav-social-name">${esc(s.name)}</span></a>`)
         .join("");
 
     el.innerHTML = `
@@ -57,14 +57,17 @@ export function renderHeader() {
             <img src="assets/img/logo.png" alt="" width="40" height="37">
             <span class="brand-name">MUPPETSG2</span>
         </a>
-        <div class="nav-links">
-            <a href="index.html#projects">Projects</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#contact">Contact</a>
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-links">
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-socials">${iconLinks}</div>
         </div>
         <div class="nav-actions">
-            ${iconLinks}
             <button type="button" class="icon-btn" data-theme-toggle></button>
+            <button type="button" class="icon-btn menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">${icon("menu")}</button>
         </div>
     </nav>`;
 
@@ -73,6 +76,22 @@ export function renderHeader() {
     });
     systemLight.addEventListener("change", updateThemeButton);
     updateThemeButton();
+
+    // Phone: the ☰ button shows and hides the menu (CSS hides it on a narrow screen)
+    const toggle = el.querySelector(".menu-toggle");
+    const setMenu = (open) => {
+        el.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        toggle.innerHTML = icon(open ? "close" : "menu");
+    };
+    toggle.addEventListener("click", () => setMenu(!el.classList.contains("is-open")));
+    el.querySelectorAll(".nav-links a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setMenu(false);
+    });
+    
+    fillIcons();
 }
 
 /* ---------- Footer ---------- */
