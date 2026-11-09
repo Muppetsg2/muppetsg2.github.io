@@ -376,7 +376,7 @@ export const projects = [
         trailer: null,
         links: [
             { label: "Download on itch.io", note: "free", url: "https://thelongcat.itch.io/wind-rider", kind: "play", primary: true },
-            { label: "Source code", note: "MIT license (code)", url: "https://github.com/MatRyb/Wind-Knight", kind: "source" }
+            { label: "Source code", note: "All rights reserved (code)", url: "https://github.com/MatRyb/Wind-Knight", kind: "source" }
         ],
         role: "UI Designer, Gameplay & Tools Programmer",
         team: [
