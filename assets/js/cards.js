@@ -6,6 +6,7 @@
 
 import { icon, LINK_ICONS } from "./icons.js";
 import { esc, href, targetAttrs, parseVideo, projectUrl } from "./utils.js";
+import { inlineText } from "./richtext.js";
 
 /** Clickable tag */
 export function tagButton(tag, activeTag, count) {
@@ -46,7 +47,7 @@ export function featuredCard(p, activeTag) {
             ${p.award ? `<p class="award">★ ${esc(p.award)}</p>` : ""}
             <h3 class="card-title"><a href="${projectUrl(p)}">${esc(p.title)}</a></h3>
             ${tagList(p.tags, activeTag)}
-            <p class="card-text">${esc(p.summary)}</p>
+            <p class="card-text">${inlineText(p.summary)}</p>
             <div class="card-actions">
                 ${main ? `<a class="btn btn-solid" href="${href(main.url)}"${targetAttrs(main.url)}>${icon(LINK_ICONS[main.kind] || "external", 18)} ${esc(main.label)}</a>` : ""}
                 <a class="btn btn-secondary" href="${projectUrl(p)}">Details ${icon("arrowRight", 16, "arrow")}</a>
@@ -87,7 +88,7 @@ export function projectCard(p, activeTag) {
         <div class="card-body is-small">
             <h3 class="card-title is-small"><a href="${projectUrl(p)}">${esc(p.title)}</a></h3>
             ${tagList(p.tags, activeTag)}
-            <p class="card-text is-muted">${esc(p.summary)}</p>
+            <p class="card-text is-muted">${inlineText(p.summary)}</p>
             <div class="card-actions">
                 <a class="btn btn-secondary btn-small" href="${projectUrl(p)}">Details ${icon("arrowRight", 16, "arrow")}</a>
                 ${quick}

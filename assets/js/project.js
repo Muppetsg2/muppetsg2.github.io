@@ -10,6 +10,7 @@ import { renderHeader, renderFooter } from "./layout.js";
 import { tagList, primaryLink } from "./cards.js";
 import { icon, LINK_ICONS } from "./icons.js";
 import { esc, href, targetAttrs, parseVideo } from "./utils.js";
+import { richText, inlineText } from "./richtext.js";
 import { showUpdated } from "./updated.js";
 import { noteNow, fillDownloadNotes } from "./downloads.js";
 
@@ -51,7 +52,7 @@ function renderProject(p) {
         </div>`
     : `<div class="video is-static">${posterImg}</div>`;
 
-    const description = (p.description || [p.summary]).map((t) => `<p>${esc(t)}</p>`).join("");
+    const description = richText(p.description || [p.summary]);
 
     const policy = privacyPolicies.find((x) => x.project === p.id);
     const policyLink = policy
@@ -81,6 +82,36 @@ function renderProject(p) {
         .join("")}</dl>`
     : "";
 
+    const features = p.features?.length
+    ? `<section class="detail-text">
+            <p class="eyebrow">// under the hood</p>
+            <div class="feature-grid">
+            ${p.features
+                .map(
+                (f) => `<div class="feature">
+                    <strong class="feature-title">${f.icon ? icon(f.icon, 20) : ""}${esc(f.title)}</strong>
+                    <span>${inlineText(f.text)}</span>
+                </div>`
+                )
+                .join("")}
+            </div>
+            ${p.stack?.length ? `<div class="tag-list is-static">${p.stack.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div>` : ""}
+        </section>`
+    : "";
+
+    const team = p.role || p.team?.length
+    ? `<div class="panel">
+        ${p.role ? `<h2 class="panel-title">My role</h2><p>${esc(p.role)}</p>` : ""}
+        ${
+            p.team?.length
+            ? `<h2 class="panel-title">Team</h2><dl class="info-table is-plain">${p.team
+                .map((m) => `<div><dt>${esc(m.name)}</dt><dd>${esc(m.role)}</dd></div>`)
+                .join("")}</dl>`
+            : ""
+        }
+        </div>`
+    : "";
+
     main.innerHTML = `
     <div class="container detail">
         <a class="back-link" href="index.html#projects">${icon("arrowLeft", 16)} cd ../projects</a>
@@ -101,13 +132,17 @@ function renderProject(p) {
                     <p class="eyebrow">// about the game</p>
                     ${description}
                 </section>
+                ${features}
             </div>
 
-            <aside class="panel">
-                <h2 class="panel-title">Download</h2>
-                <div class="download-list">${links}</div>
-                ${info}
-                ${policyLink}
+            <aside class="detail-side">
+                <div class="panel">
+                    <h2 class="panel-title">Download</h2>
+                    <div class="download-list">${links}</div>
+                    ${info}
+                    ${policyLink}
+                </div>
+                ${team}
             </aside>
         </div>
     </div>`;

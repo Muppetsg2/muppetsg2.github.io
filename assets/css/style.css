@@ -377,6 +377,8 @@ main {
 }
 
 .nav-links a {
+  position: relative;
+  isolation: isolate;
   padding: 10px 6px;
   color: var(--text-2);
   font-size: 15px;
@@ -386,6 +388,25 @@ main {
 
 .nav-links a:hover {
   color: var(--text);
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 4px -6px;
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  background: var(--surface-2);
+  opacity: 0;
+  transform: scale(1.3);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav-socials,
@@ -424,11 +445,36 @@ main {
 }
 
 .footer-links a {
+  --underline: 1px;
+  padding-bottom: 2px;
   color: var(--muted);
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: color 0.15s;
 }
 
 .footer-links a:hover {
   color: var(--text);
+  animation: underline-redraw 0.5s ease-in-out 1;
+}
+
+@keyframes underline-redraw {
+  0% {
+    background-size: 100% var(--underline, 2px);
+    background-position: 100% 100%;
+  }
+  50% {
+    background-size: 0% var(--underline, 2px);
+    background-position: 100% 100%;
+  }
+  50.1% {
+    background-size: 0% var(--underline, 2px);
+    background-position: 0 100%;
+  }
+  100% {
+    background-size: 100% var(--underline, 2px);
+    background-position: 0 100%;
+  }
 }
 
 /* ---------- Sections ---------- */
@@ -1113,6 +1159,53 @@ button.tag.is-on:hover {
   text-align: right;
 }
 
+/* ---------- Features, stack, role, and team ---------- */
+.detail-side {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.detail-side > .panel {
+  flex: none;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.feature-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feature-title .icon {
+  flex: none;
+  color: var(--accent);
+}
+.feature span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.feature span strong {
+  color: var(--text);
+}
+.info-table.is-plain {
+  border-top: 0;
+  padding-top: 0;
+  font-family: var(--font-body);
+}
+
 /* ---------- "Not found" – used by 404.html ---------- */
 .not-found {
   display: flex;
@@ -1465,6 +1558,10 @@ a.tag-link:hover {
     border-bottom: 1px solid var(--line);
   }
 
+  .nav-links a::before {
+    display: none;
+  }
+
   .nav-socials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -1639,4 +1736,57 @@ a.tag-link:hover {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ---------- Formatting project texts (richtext.js) ---------- */
+.detail-text p.indent {
+  margin: -8px 0 14px calc(var(--level) * 24px);
+}
+
+.rich-list {
+  margin: 0 0 14px;
+  padding-left: 24px;
+  font-size: 18px;
+  color: var(--text-2);
+}
+
+.rich-list li {
+  margin: 0 0 6px calc(var(--level, 0) * 24px);
+}
+
+.rich-list li::marker {
+  color: var(--accent);
+}
+
+.rich-list li.has-marker {
+  list-style: none;
+}
+
+.rich-marker {
+  display: inline-block;
+  width: 24px;
+  margin-left: -24px;
+  color: var(--accent);
+}
+
+.detail-text strong,
+.card-text strong {
+  color: var(--text);
+}
+
+.rich-link {
+  padding-bottom: 2px;
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 2px no-repeat;
+  transition: color 0.15s;
+}
+
+.rich-link:hover {
+  color: var(--accent);
+  animation: underline-redraw 0.5s ease-in-out 1;
+}
+
+.rich-link strong {
+  color: inherit;
 }
