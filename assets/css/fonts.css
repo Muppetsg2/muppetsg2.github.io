@@ -1,0 +1,21 @@
+/*
+   =============================================
+   fonts.css – Font definitions for the website.
+   =============================================
+*/
+
+/* ---------- Custom Fonts ---------- */
+@font-face {
+  /* Credits: Thomas W. Otto (https://www.norfok.com/portfolio-freeware_terminatorreal.html) */
+  font-family: "Terminator Real NFI";            /* name */
+  font-display: swap;
+  src: url(../fonts/terminator-real-nfi.woff2);  /* url of the font */
+}
+
+/* ---------- Fonts ---------- */
+:root {
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-brand: "Terminator Real NFI", system-ui, sans-serif;
+}

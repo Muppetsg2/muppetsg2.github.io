@@ -1,193 +1,134 @@
-<!DOCTYPE HTML>
-
-<html>
-
-
-	<head>
-
-	<meta charset="UTF-8">
-	<title>Muppetsg2</title>
-	<meta name="Description" content="Muppetsg2's Page" />
-	<meta name="Keywords" content="Muppetsg2, Page, New, Programmer, Test" />
-	<link rel="shortcut icon" href="IMG/LogoNewAge.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="CSS/style.css">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Muppetsg2 – games, engines & graphics in C++</title>
+        <meta name="description" content="C++ programmer making games in Unreal Engine, Unity and on a custom engines.">
         
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript">
-        $(window).on('scroll', function(){
-            if ($(window).scrollTop()){
-                $('nav').addClass('black');
-            }
-            else {
-                $('nav').removeClass('black');
-            }
-        })
-    </script>
+        <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
-	</head>
-
-
-	<body>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
-        <div class="pimg1" id="Home">
-            
-            <div class="ptext">
-                
-                <span class="border">
-                    
-                    Welcome!
-                    
-                </span>
-                
-            </div>
-            
-            <div class="parrow">
-                
-                
-                <a href="#About">
-                    
-                    <h4>See More</h4>
-                    
-                    <img src="IMG/Arrow.png" height="20px" width="53px">
-                    
-                </a>
-                
-            </div>
-            
-        </div>
-        
-        <section class="section section-light">
-            
-            <img src="IMG/Dots.png" alt="..." height="55px" width="242px">
-            
-        </section>
-        
-        <div class="pimg2" id="About">
-            
-            <div class="ptext">
-                
-                <span class="border-trans">
-                    
-                    
-                    
-                </span>
-                
-            </div>
-            
-        </div>
-        
-        <section class="section section-light">
-            
-            <h2>About</h2>
-            
-            <p>
-                
-                I'm a game developer and in some free time I record a videos on YT. I like taking photos of nature what you can see on my instagram profile. I create this website to post my games. If you want to send a message to me, you can do this by my email, which is wrote on the end of this page or you can send a message by messenger or instagram. I'm open to collaborate with somebody in creating games.
-                
-            </p>
-            
-        </section>
-        
-        <div class="pimg3" id="Games">
-            
-            <div class="ptext">
-                
-                <span class="border-trans">
-                    
-                    
-                    
-                </span>
-                
-            </div>
-            
-        </div>
-        
-        <section class="section section-light">
-            
-            <h2>Games</h2>
-            
-            <div class="GameBTN">
-                
-                <a class="btn" href="https://muppetsg2.itch.io/there-are-signs"><div class="imagebtn" id="ThereAreSigns"></div></a>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+        <link rel="stylesheet" href="assets/css/colors.css">
+        <link rel="stylesheet" href="assets/css/fonts.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-                <a class="btn" href="https://agaa3.itch.io/bubble-hunt"><div class="imagebtn" id="BubbleHunt"></div></a>
+        <script src="assets/js/theme.js"></script>
+        <script type="module" src="assets/js/home.js"></script>
+    </head>
+    <body id="top">
+        <header id="site-header" class="site-header"></header>
 
-                <a class="btn" href="https://thelongcat.itch.io/wind-rider"><div class="imagebtn" id="WindRider"></div></a>
+        <main>
+            <!-- HERO -->
+            <section class="container hero">
+                <div class="hero-text">
+                    <p class="prompt">&gt; ./muppetsg2 --whoami<span class="cursor">_</span></p>
+                    <h1>I build games — and the engines behind them.</h1>
+                    <div class="grad-line"></div>
+                    <p class="lead">C++ programmer focused on games, game engines and graphics. I make games in Unreal Engine, Unity and on my own custom engines — solo and in teams.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-large" href="#projects">
+                            See my projects
+                            <span data-icon="arrowRight" class="arrow"></span>
+                        </a>
+                        <a class="btn btn-secondary btn-large" href="https://github.com/Muppetsg2" target="_blank" rel="noopener">
+                            <span data-icon="github"></span>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
 
-                <a class="btn" href="Shooter.html"><div class="imagebtn" id="Shooter"></div></a>
-                
-                <a class="btn" href="Marry,%20Kiss%20&%20Kill.html"><div class="imagebtn" id="Mkk"></div></a>
-                
-                <a class="btn" href="Diler%20-%20The%20Last%207Week.html"><div class="imagebtn" id="Diler"></div></a>
-                
-                <a class="btn" href="The%20Wizards.html"><div class="imagebtn" id="TW"></div></a>
-                
-            </div>
-            
-        </section>
-        
-        <div class="pimg4" id="Videos">
-            
-            <div class="ptext">
-                
-                <span class="border-trans">
+                <figure class="code-window" aria-hidden="true">
+                    <div class="code-bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>Muppetsg2.cpp
+                    </div>
+                    <pre>
+<span class="p">#include</span> <span class="s">&lt;engine/Core.hpp&gt;</span>
+
+<span class="k">class</span> <span class="cs">Muppetsg2</span> <span class="k">final</span> : <span class="k">public</span> <span class="cs">GameDev</span> {
+<span class="k">public</span>:
+    <span class="ns">std</span>::<span class="cs">array</span>&lt;<span class="ns">std</span>::<span class="cs">string_view</span>, <span class="n">3</span>&gt; <span class="v">engines</span> {
+        <span class="s">"Custom"</span>, <span class="s">"Unreal"</span>, <span class="s">"Unity"</span>
+    };
+
+    <span class="k">void</span> <span class="f">Update</span>(<span class="k">float</span> <span class="v">dt</span>) <span class="k">override</span> {
+        <span class="bk">if</span> (<span class="v">idea</span>.<span class="f">IsGood</span>()) <span class="f">Ship</span>(<span class="f">Build</span>(<span class="v">idea</span>));
+    }
+};</pre>
+                </figure>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects" class="section is-alt">
+                <div class="container">
+                    <p class="eyebrow">01 // projects</p>
                     
-                    
-                    
-                </span>
-                
-            </div>
-            
-        </div>
-        
-        <section class="section section-light">
-            
-            <h2>New Videos</h2>
-            
-            <div class="VideosBG">
-                
-                <iframe src="https://www.youtube.com/embed/Ybg7Kx91Qes?si=blfRGzqdRTbuhswv" title="ThereAreSignsYT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <h2 class="section-title">Highlights</h2>
+                    <div id="featured" class="featured-grid"></div>
 
-                <iframe src="https://www.youtube.com/embed/d_IHK5qQBHs?si=tB91ZS-sANnc2PZz" title="ShooterYT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                
-                <iframe src="https://www.youtube.com/embed/byNMAhhpPEM?si=zImvDo-cso_5IWF8" title="DilerYT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                
-            </div>
-            
-        </section>
-        
-        <section class="section section-end">
-            
-            <p><img src="IMG/gmail.png" id="Gmail"> <b>muppetsg2@gmail.com</b></p>
-            
-            <p><a href="https://www.instagram.com/muppetsg2/"><img src="IMG/instagram.png" id="Instagram"> <b>@muppetsg2</b></a></p>
-            
-            <p><a href="https://www.youtube.com/channel/UCqznIHKh-5x2kF2yofbfAVQ/feed?activity_view=1"><img src="IMG/Youtube.png" id="Youtube"> <b>Muppetsg2</b></a></p>
-            
-            <p><a href="https://www.facebook.com/muppetsg2.page/"><img src="IMG/Facebook.png" id="Facebook"> <b>@muppetsg2.page</b></a></p>
-            
-            <p><a href="https://hub.vroid.com/en/users/62006019"><img src="IMG/VRoidHub2.png" id="VRoidStudio"> <b>Muppetsg2</b></a></p>
+                    <h2 id="all-projects" class="sub-title">All projects</h2>
+                    <div id="tag-filter" class="filter-bar" role="group" aria-label="Filter projects by tag"></div>
+                    <div id="result-info" class="result-info" aria-live="polite"></div>
+                    <div id="project-grid" class="project-grid"></div>
+                </div>
+            </section>
 
-            <p><a href="https://muppetsg2.itch.io/"><img src="IMG/ItchIoSmall.png" id="Itch.io"> <b>Muppetsg2</b></a></p>
-            
-            <h5>&copy; Marceli Antosik</h5>
-            
-        </section>
-        
-        <nav>
-                
-            <ul>
-                
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Games">Games</a></li>
-                <li><a href="#Videos">Videos</a></li>
-                
-            </ul>
-                
-        </nav>
+            <!-- ABOUT -->
+            <section id="about" class="section">
+                <div class="container">
+                    <div class="about">
+                        <div class="about-text">
+                            <p class="eyebrow">02 // about</p>
+                            <h2 class="section-title">About me</h2>
+                            <p>I'm a programmer who specialises in C++. I write games, the engines they run on, and the graphics code that puts them on screen — in Unreal Engine, Unity and on engines built from scratch.</p>
+                            <p>Outside of code I like taking photos of nature. I'm always open to collaborating on new projects — drop me a message.</p>
+                        </div>
+                        <div class="toolbox">
+                            <p class="toolbox-title">// toolbox</p>
+                            <dl>
+                                <div><dt>main language</dt><dd class="cs">C++</dd></div>
+                                <div><dt>also</dt><dd>Python · C# · C</dd></div>
+                                <div><dt>engines</dt><dd>Custom · Unreal · Unity</dd></div>
+                                <div><dt>graphics</dt><dd>OpenGL · Vulkan</dd></div>
+                                <div><dt>status</dt><dd class="s">● open to collab</dd></div>
+                            </dl>
+                        </div>
+                    </div>
 
-	</body>
+                    <div class="pillars">
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="itch" data-size="22"></span></span>
+                            <h3>Games</h3>
+                            <p>Gameplay programming in Unreal, Unity and custom tech — from game jams and competitions to released titles.</p>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="chip" data-size="22"></span></span>
+                            <h3>Game engines</h3>
+                            <p>Engine architecture in modern C++: object-component systems, resource management, tooling and editors.</p>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon"><span data-icon="layers" data-size="22"></span></span>
+                            <h3>Graphics programming</h3>
+                            <p>Real-time rendering with OpenGL and Vulkan.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <!-- CONTACT -->
+            <section id="contact" class="section is-alt">
+                <div class="container">
+                    <p class="eyebrow">03 // contact</p>
+                    <h2 class="section-title">Let's talk</h2>
+                    <div id="contact-list" class="contact-grid"></div>
+                </div>
+            </section>
+        </main>
 
+        <footer id="site-footer" class="site-footer"></footer>
+    </body>
 </html>

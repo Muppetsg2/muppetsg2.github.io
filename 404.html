@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/">
+        <title>Page not found – Muppetsg2</title>
+        <meta name="robots" content="noindex">
+        <link rel="icon" href="assets/img/favicon.png" type="image/png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+        <link rel="stylesheet" href="assets/css/colors.css">
+        <link rel="stylesheet" href="assets/css/fonts.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <script src="assets/js/theme.js"></script>
+        <script type="module" src="assets/js/page.js"></script>
+    </head>
+    <body id="top">
+        <header id="site-header" class="site-header"></header>
+
+        <main class="container not-found">
+            <div class="not-found-hero">
+                <div>
+                    <p class="eyebrow">// error 404</p>
+                    <h1>Page not found</h1>
+                    <p class="lead">This level doesn't exist — the link may be old, or the address has a typo.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-large" href="index.html">
+                            <span data-icon="arrowLeft" class="arrow is-back"></span>
+                            Back to the home page
+                        </a>
+                        <a class="btn btn-secondary btn-large" href="index.html#projects">See all projects</a>
+                    </div>
+                </div>
+
+                <figure class="code-window" aria-hidden="true">
+                    <div class="code-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>console</div>
+                        <pre>
+<span class="k">auto</span>* <span class="v">page</span> = <span class="cs">Router</span>::<span class="f">Find</span>(<span class="v">url</span>);
+<span class="k">assert</span>(<span class="v">page</span> != <span class="k">nullptr</span>);
+
+<span class="c">// Assertion failed: page != nullptr</span>
+<span class="c">// status: </span><span class="n">404</span><span class="c"> – Not Found</span></pre>
+                </figure>
+            </div>
+
+            <p class="eyebrow suggestions-title">// maybe you were looking for</p>
+            <div id="suggestions" class="mini-grid"></div>
+        </main>
+
+        <footer id="site-footer" class="site-footer"></footer>
+    </body>
+</html>
