@@ -33,14 +33,15 @@
             { label: "Windows 64-bit", note: ".exe · 30 MB", url: "Downloads/ExeFile.exe", kind: "download" },
         ],
         info: { engine: "Unity", "version.pc": "1.5.0", "version.android": "1.5.9" },  // table on the subpage – any key-value pair can be entered
-        role: "",                                                                      // Optional, e.g., "Gameplay Programmer" (leave empty if none)
+        role: "",                                                                      // Optional, your role, e.g., "Gameplay Programmer" (leave empty if none)
         team: [
-            // Optional
+            // Optional – the OTHER people on the team (you are already shown under "My role")
+            // Role names: job titles ("Programmer", "Designer", "Artist"), "A & B" for two, "A, B & C" for more
             { name: "Person 1", role: "Role 1" },
         ],
         features: [
-            // Optional
-            { title: "Title1", text: "Description" }
+            // Optional – icon: name from assets/js/icons.js (optional), text may use **bold**, *italic*, [links](url)
+            { title: "Title1", icon: "star", text: "Description" }
         ],
         stack: ["Unity", "C#"], // Optional, array of libraries / tools
         // Optional, the page shows only the month: “March 2026”
@@ -72,21 +73,25 @@ export const projects = [
         links: [
             { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/steamline", kind: "play", primary: true },
         ],
-        role: "Lead Programmer, Game Design, VFX & 3D Models Integration",
+        role: "Lead Programmer, Game Designer, VFX Artist & 3D Model Integration",
         team: [
-            { name: "Marceli Antosik", role: "Lead Programmer, Game Design, VFX & 3D Models Integration" },
-            { name: "Grzegorz Ludziejewski", role: "Gameplay Programmer & VFX" },
-            { name: "Jakub Rajczyk", role: "3D Models" },
-            { name: "Magdalena Siuda", role: "3D Models" },
-            { name: "Łukasz Śmieszek", role: "Gameplay Programmer & Music Searcher" },
+            { name: "Grzegorz Ludziejewski", role: "Gameplay Programmer & VFX Artist" },
+            { name: "Jakub Rajczyk", role: "3D Artist" },
+            { name: "Magdalena Siuda", role: "3D Artist" },
+            { name: "Łukasz Śmieszek", role: "Gameplay Programmer & Music Curator" },
         ],
         info: { 
             engine: "Unreal Engine",
-            language: "Blueprint · C++",
+            language: "Blueprints · C++",
             genre: "Puzzle",
             version: "1.0.7",
             team: "Ryba Team"
         },
+        features: [
+            { title: "Pipe Puzzles", icon: "puzzle", text: "Connect pipes and other components correctly to build a working steam network." },
+            { title: "Limited Resources", icon: "flame", text: "Every boiler room has only so much at your disposal – plan before you build." },
+            { title: "Exact Requirements", icon: "gauge", text: "Each factory needs its own amount of steam power. Deliver **exactly** what it needs." },
+        ],
         updated: "2026-06-25",
     },
 
@@ -110,18 +115,23 @@ export const projects = [
             { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/destiny-painter", kind: "play", primary: true },
             { label: "Source code", note: "All rights reserved (code)", url: "https://github.com/Muppetsg2/DestinyPainter", kind: "source" }
         ],
-        role: "Art Lead & VFX & Game Designer",
+        role: "Art Lead, VFX Artist & Game Designer",
         team: [
-            { name: "Marceli Antosik", role: "Art Lead & VFX & Game Designer" },
             { name: "Patryk Antosik", role: "Player Movement & Animation Programmer" },
             { name: "Bartłomiej Włodarski", role: "Planets Behaviour Programmer" },
         ],
         info: {
             engine: "Unity",
             language: "C#",
+            genre: "Arcade",
             version: "1.0.1",
             team: "Drop Table - 1",
         },
+        features: [
+            { title: "Colour Matching", icon: "droplet", text: "Land only on planets that match your current colour. Grab colour changers and avoid the black planets." },
+            { title: "Living Murals", icon: "palette", text: "Every level is a new mural inspired by **Tauros** by **Opiemme** – your paint trail brings it to life." },
+            { title: "Star Ratings", icon: "star", text: "Your precision and the number of jumps decide how many stars you earn." },
+        ],
         updated: "github:Muppetsg2/DestinyPainter",
     },
 
@@ -139,7 +149,6 @@ export const projects = [
             "\t- **Trapdoor Button** – Send unwanted employees or documents away.",
             "\t- **Confetti Button** – Celebrate your questionable decisions.",
             "\t- **\"Good Job\" Sticker** – Reward your employees.",
-            "\t- **\"Good Job\" Sticker** – Reward your employees.",
             "\t- **Shredder** – Get rid of documents you don't want to deal with.",
             "\t- **Throw Objects** – Sometimes the simplest solution is to throw things at your employees.",
             "Every decision affects four key company statistics:",
@@ -151,20 +160,20 @@ export const projects = [
             "Your goal is to keep the company running for as long as possible. Make poor decisions, neglect your employees, or let your finances fall apart, and you might face bankruptcy, employee protests, or even a full-blown riot.",
             "**How long can you survive as CEO?**"
         ],
-        tags: ["Unity", "VR", "Meta Quest", "Team", "ZTGK"],
+        tags: ["Unity", "VR", "Meta Quest", "Simulator", "Endless Runner", "Team", "ZTGK"],
         icon: "assets/img/projects/ceo-simulator-icon.webp",
         cover: "assets/img/projects/ceo-simulator-cover.webp",
-        trailer: "https://www.youtube.com/watch?v=Ybg7Kx91Qes",
+        trailer: "https://vimeo.com/1092811852",
         links: [
-            { label: "Meta Quest 2 & 3", note: "{ext} · {size}", url: "https://github.com/Muppetsg2/VRGame/releases/download/v1.0.0-ZTGK/CEOSimulator.apk", kind: "download", primary: true },
+            { label: "Download on itch.io", note: "free", url: "https://magnar303.itch.io/ceo-simulator", kind: "play", primary: true },
+            { label: "Meta Quest 2 & 3", note: "{ext} · {size}", url: "https://github.com/Muppetsg2/VRGame/releases/download/v1.0.0-ZTGK/CEOSimulator.apk", kind: "download" },
             { label: "Source code", note: "All rights reserved (code)", url: "https://github.com/Muppetsg2/VRGame", kind: "source" }
         ],
-        role: "In Game Computer Behaviour Programming & Platform Compatibility Testing",
+        role: "In-Game Computer Programmer & Platform Compatibility Tester",
         team: [
-            { name: "Marceli Antosik", role: "In Game Computer Behaviour Programming & Platform Compatibility Testing" },
-            { name: "Patryk Antosik", role: "Stamp Behaviour Programming & Physics Objects Technical Design" },
-            { name: "Bartłomiej Włodarski", role: "Documents & Enviroment Behaviour Programming & Game Designer" },
-            { name: "Maja Ochmańska", role: "Game Designer & Graphics" },
+            { name: "Patryk Antosik", role: "Stamp Programmer & Physics Objects Technical Designer" },
+            { name: "Bartłomiej Włodarski", role: "Documents & Environment Programmer, Game Designer" },
+            { name: "Maja Ochmańska", role: "Game Designer, 2D Artist & 3D Artist" },
         ],
         info: {
             engine: "Unity",
@@ -173,6 +182,12 @@ export const projects = [
             version: "1.0.0",
             team: "Drop Table",
         },
+        features: [
+            { title: "Hands-On Decisions", icon: "vr", text: "Stamp, shred, throw or drop documents through a trapdoor – every choice is a physical action in VR." },
+            { title: "Four Company Stats", icon: "chart", text: "Money, production, employee satisfaction, and law and order – keep them all balanced." },
+            { title: "Office Computer", icon: "monitor", text: "Check how the company is doing on the computer on your desk." },
+            { title: "Many Ways to Fail", icon: "alert", text: "Bankruptcy, employee protests, or a full-blown riot – it all depends on your decisions." },
+        ],
         updated: "github:Muppetsg2/VRGame",
     },
 
@@ -187,7 +202,7 @@ export const projects = [
             "This is a roguelike game featuring procedurally generated levels. Your goal is to help the dog collect all three pieces of the Wishing Star and finally free himself from his curse.",
             "Made for **Komiks Game Jam 2k26**, based on the theme *\"Per Aspera Ad Astra\"*."
         ],
-        tags: ["Unity", "Rougelike", "Windows", "Team", "itch.io", "Game Jam"],
+        tags: ["Unity", "Roguelike", "Windows", "Team", "itch.io", "Game Jam"],
         icon: "assets/img/projects/dog-of-war-icon.webp",
         cover: "assets/img/projects/dog-of-war-cover.webp",
         trailer: "https://www.youtube.com/watch?v=KrlpQl53lzg",
@@ -197,17 +212,21 @@ export const projects = [
         ],
         role: "Procedural Generation Programmer & Level Designer",
         team: [
-            { name: "Marceli Antosik", role: "Procedural Generation Programmer & Level Designer" },
             { name: "Patryk Antosik", role: "Game Designer & Gameplay Programmer" },
             { name: "Mikołaj Kisiel", role: "AI Programmer" },
-            { name: "Konrad Karwowski", role: "Graphics" },
+            { name: "Konrad Karwowski", role: "2D Artist" },
         ],
         info: {
             engine: "Unity",
             language: "C#",
+            genre: "Roguelike",
             version: "1.0",
             team: "Psy Apokalipsy",
         },
+        features: [
+            { title: "Procedural Levels", icon: "dice", text: "Levels are procedurally generated, so every run is different." },
+            { title: "The Wishing Star", icon: "star", text: "Collect all three pieces of the Wishing Star to break the curse." },
+        ],
         updated: "github:Westesc/KGJ2026",
     },
 
@@ -232,17 +251,22 @@ export const projects = [
         ],
         role: "UI Designer & Narrative System Programmer",
         team: [
-            { name: "Marceli Antosik", role: "UI Designer & Narrative System Programmer" },
             { name: "Patryk Antosik", role: "Level Designer & Gameplay Programmer" },
             { name: "Bartłomiej Włodarski", role: "Narrative Designer, Game Designer & Gameplay Programmer" },
-            { name: "Maja Ochmańska", role: "Game Designer & Graphics" },
+            { name: "Maja Ochmańska", role: "Game Designer & 2D Artist" },
         ],
         info: {
             engine: "Unity",
             language: "C#",
+            genre: "Platformer",
             version: "1.0",
             team: "Drop Table",
         },
+        features: [
+            { title: "Sign Mechanics", icon: "signpost", text: "Use signs to manipulate the environment and change how you move through the world." },
+            { title: "Kick Combat", icon: "zap", text: "Take down enemies and break through challenges with your kicks." },
+            { title: "Climb the Social Ladder", icon: "crown", text: "Defeat your rivals and the school's toughest students to become popular." },
+        ],
         updated: "github:Muppetsg2/KomiksGJ2025",
     },
 
@@ -267,17 +291,22 @@ export const projects = [
         ],
         role: "UI Designer & Gameplay Programmer",
         team: [
-            { name: "Marceli Antosik", role: "UI Designer & Gameplay Programmer" },
             { name: "Patryk Antosik", role: "AI & Gameplay Programmer" },
-            { name: "Maciej Poncyleusz", role: "VFX & Gameplay Programmer" },
-            { name: "Agata Granosik", role: "Graphics & 3D Models" },
+            { name: "Maciej Poncyleusz", role: "VFX Artist & Gameplay Programmer" },
+            { name: "Agata Granosik", role: "2D & 3D Artist" },
         ],
         info: {
             engine: "Unreal Engine",
             language: "Blueprints",
+            genre: "Action",
             version: "1.0",
             team: "Crab Club",
         },
+        features: [
+            { title: "Bubble Gun", icon: "bubbles", text: "Trap bugs inside giant bubbles and deliver them to the monster." },
+            { title: "Unfriendly Bugs", icon: "bug", text: "The bugs fight back and leave a nasty mess that slows you down." },
+            { title: "Impatient Monster", icon: "timer", text: "Feed the monster before it runs out of patience – or become its next meal." },
+        ],
         updated: "2025-01-27",
     },
 
@@ -291,7 +320,7 @@ export const projects = [
             "Area-control strategy where your band conquers the world with music. Built in 4 months on our own engine, Twin² Engine.",
         description: [
             "An area-control strategy game: you lead a band fighting rival teams for influence across a hex map, while a deity watches over you and protects your music.",
-            "We built it in 4 months for courses at Lodz University of Technology — on Twin² Engine, a game engine we wrote ourselves in C++20.",
+            "We built it in 4 months for courses at Lodz University of Technology – on Twin² Engine, a game engine we wrote ourselves in C++20.",
         ],
         tags: ["C++", "Custom Engine", "OpenGL", "Strategy", "Endless Runner", "Team", "Windows", "ZTGK"],
         icon: "assets/img/projects/echoes-of-fame-icon.webp",
@@ -299,32 +328,32 @@ export const projects = [
         trailer: "https://vimeo.com/962661277",
         links: [
             { label: "Windows x64", note: "{ext} · {size}", url: "https://github.com/Muppetsg2/Twin-2-Engine/releases/download/v1.2.2-After-Finals/build.zip", kind: "download", primary: true },
-            { label: "Source code", note: "MIT licence (code)", url: "https://github.com/Muppetsg2/Twin-2-Engine", kind: "source" },
+            { label: "Source code", note: "MIT license (code)", url: "https://github.com/Muppetsg2/Twin-2-Engine", kind: "source" },
         ],
         role: "Code Quality & Testing Lead",
         team: [
-            { name: "Marceli Antosik", role: "Code Quality & Testing Lead" },
             { name: "Patryk Antosik", role: "AI & UI Programmer" },
-            { name: "Łukasz Gapiński", role: "3D Physics & Procedural Generation" },
-            { name: "Mateusz Gapiński", role: "Rendering" },
-            { name: "Maja Ochmańska", role: "Graphics & 3D Models" },
+            { name: "Łukasz Gapiński", role: "Physics & Procedural Generation Programmer" },
+            { name: "Mateusz Gapiński", role: "Rendering Programmer" },
+            { name: "Maja Ochmańska", role: "2D & 3D Artist" },
         ],
         info: {
             engine: "Twin² Engine",
             language: "C++20",
             graphics: "OpenGL",
+            genre: "Strategy Endless Runner",
             version: "1.2.2",
             team: "Twin²",
             build: "VS 2022 · CMake",
             "dev time": "4 months",
         },
         features: [
-            { title: "Object-Component model", text: "Unity-style GameObjects & components" },
-            { title: "3D physics", text: "Custom collision system" },
-            { title: "Editor", text: "Scenes, prefabs and debug log" },
-            { title: "Resource managers", text: "Models, textures, audio, fonts" },
-            { title: "UI, input & events", text: "Engine-level systems" },
-            { title: "Procedural maps", text: "Generated hex worlds" },
+            { title: "Object-Component Model", icon: "layers", text: "Unity-style GameObjects & components" },
+            { title: "3D Physics", icon: "cube", text: "Custom collision system" },
+            { title: "Editor", icon: "window", text: "Scenes, prefabs and debug log" },
+            { title: "Resource Managers", icon: "folder", text: "Models, textures, audio, fonts" },
+            { title: "UI, Input & Events", icon: "gamepad", text: "Engine-level systems" },
+            { title: "Procedural Maps", icon: "hexagon", text: "Generated hex worlds" },
         ],
         stack: ["ImGui", "GLFW", "glm", "assimp", "SoLoud", "FreeType", "yaml-cpp", "spdlog", "Tracy", "stb_image"],
         updated: "github:Muppetsg2/Twin-2-Engine",
@@ -347,22 +376,27 @@ export const projects = [
         trailer: null,
         links: [
             { label: "Download on itch.io", note: "free", url: "https://thelongcat.itch.io/wind-rider", kind: "play", primary: true },
-            { label: "Source code", note: "MIT licence (code)", url: "https://github.com/MatRyb/Wind-Knight", kind: "source" }
+            { label: "Source code", note: "MIT license (code)", url: "https://github.com/MatRyb/Wind-Knight", kind: "source" }
         ],
-        role: "UI Designer, Gameplay Programmer & Tools Developer",
+        role: "UI Designer, Gameplay & Tools Programmer",
         team: [
-            { name: "Marceli Antosik", role: "UI Designer, Gameplay Programmer & Tools Developer" },
-            { name: "Patryk Antosik", role: "Gameplay Programmer & Tools Developer" },
+            { name: "Patryk Antosik", role: "Gameplay & Tools Programmer" },
             { name: "Jakub Biniek", role: "Game & Level Designer" },
             { name: "Mateusz Rybicki", role: "Gameplay Programmer" },
-            { name: "Katarzyna Tyszka", role: "Graphics" },
+            { name: "Katarzyna Tyszka", role: "2D Artist" },
         ],
         info: {
             engine: "Unity",
             language: "C#",
+            genre: "Puzzle-Platformer",
             version: "1.0",
             team: "The Long Cat",
         },
+        features: [
+            { title: "Wind Power", icon: "wind", text: "Harness the wind to move objects around and clear your path." },
+            { title: "Maze Levels", icon: "maze", text: "Find your way through enclosed mazes to reach the exit." },
+            { title: "Obstacles & Enemies", icon: "skull", text: "Overcome tricky obstacles and outsmart the enemies in your way." },
+        ],
         updated: "2023-06-29",
     },
 
@@ -386,12 +420,20 @@ export const projects = [
         links: [
             { label: "Android", note: "Google Play", url: "https://play.google.com/store/apps/details?id=com.MAIPA.INCandMuppetsg2.MKandK", kind: "store", primary: true },
         ],
-        role: "UI Designer, VFX & Data Curator",
+        role: "UI Designer, VFX Artist & Data Curator",
         team: [
-            { name: "Marceli Antosik", role: "UI Designer, VFX & Data Curator" },
             { name: "Patryk Antosik", role: "Game Designer & Gameplay Programmer" },
         ],
-        info: { engine: "Unity", language: "C#", version: "2.4d" },
+        info: { 
+            engine: "Unity",
+            language: "C#",
+            genre: "Party",
+            version: "2.4d"
+        },
+        features: [
+            { title: "Three Game Modes", icon: "users", text: "Enter names and pick, let the phone decide, or choose from celebrities." },
+            { title: "Fully Private", icon: "shield", text: "Your choices are never saved or sent anywhere." },
+        ],
         updated: "2026-03-08",
     },
 
@@ -429,16 +471,19 @@ export const projects = [
             { label: "Android", note: "Google Play", url: "https://play.google.com/store/apps/details?id=com.Muppetsg2.Shooter", kind: "store" },
         ],
         role: "Solo Developer",
-        team: [
-            { name: "Marceli Antosik", role: "Solo Developer" },
-        ],
-        info: { engine: "Unity", language: "C#", "version.windows": "1.5.0", "version.android": "1.5.9" },
+        info: { 
+            engine: "Unity",
+            language: "C#",
+            genre: "Action Shooter",
+            "version.windows": "1.5.0",
+            "version.android": "1.5.9"
+        },
         features: [
-            { title: "Different Map Sizes", text: "Choose from 3 map sizes: 30×30, 60×60, and 100×100. Pick the one that suits your playstyle!" },
-            { title: "Different Enemy Types", text: "Face 3 types of enemies: Normal, Large, and Small but Fast. Each type has unique stats and appearance that evolve as your score increases." },
-            { title: "Additional Weapons", text: "Find powerful weapons scattered randomly across the map, including the AK-47 and Bazooka. Use them to gain an advantage over your enemies." },
-            { title: "Event-Themed Maps", text: "Discover special map themes available only during certain dates and seasonal events." },
-            { title: "Leveling System", text: "Earn points to level up and increase the damage you deal. The higher your level, the stronger you become!" },
+            { title: "Different Map Sizes", icon: "map", text: "Choose from 3 map sizes: 30×30, 60×60, and 100×100. Pick the one that suits your playstyle!" },
+            { title: "Different Enemy Types", icon: "skull", text: "Face 3 types of enemies: Normal, Large, and Small but Fast. Each type has unique stats and appearance that evolve as your score increases." },
+            { title: "Additional Weapons", icon: "crosshair", text: "Find powerful weapons scattered randomly across the map, including the AK-47 and Bazooka. Use them to gain an advantage over your enemies." },
+            { title: "Event-Themed Maps", icon: "calendar", text: "Discover special map themes available only during certain dates and seasonal events." },
+            { title: "Leveling System", icon: "levelUp", text: "Earn points to level up and increase the damage you deal. The higher your level, the stronger you become!" },
             { title: "Google Play Games Integration", icon: "googlePlayGames", text: "Unlock achievements and compete with other players by submitting your scores to Google Play leaderboards." },
         ],
         updated: "2026-03-09",
@@ -463,14 +508,21 @@ export const projects = [
         links: [
             { label: "Android", note: "Google Play", url: "https://play.google.com/store/apps/details?id=com.MAIPA.INC.Muppetsg2.Last7Weeks", kind: "store", primary: true },
         ],
-        role: "Level & UI Designer & Google Play Integration",
+        role: "Level Designer, UI Designer & Google Play Games Integration",
         team: [
-            { name: "Marceli Antosik", role: "Level & UI Designer & Google Play Integration" },
-            { name: "Patryk Antosik", role: "3D Models & Gameplay Programmer" },
+            { name: "Patryk Antosik", role: "3D Artist & Gameplay Programmer" },
         ],
-        info: { engine: "Unity", language: "C#", version: "1.5.3" },
+        info: {
+            engine: "Unity",
+            genre: "Space Shooter",
+            language: "C#",
+            version: "1.5.3"
+        },
         features: [
-            { title: "Google Play Games Integration", icon: "googlePlayGames", text: "Earn Achievements and post your scores in google play leaderboards." },
+            { title: "6 Spaceships", icon: "rocket", text: "Choose from 6 different spaceships." },
+            { title: "Story Mode", icon: "book", text: "Uncover the mystery of the last 7week and help the dealer collect the debts he's owed." },
+            { title: "Endless Mode", icon: "infinity", text: "Survive as long as you can and beat your own high score – or your friends'." },
+            { title: "Google Play Games Integration", icon: "googlePlayGames", text: "Unlock achievements and compete with other players on Google Play leaderboards." },
         ],
         updated: "2026-03-10",
     },
@@ -495,15 +547,15 @@ export const projects = [
             { label: "Windows 32-bit", note: "{ext} · {size}", url: "Downloads/The Wizards 3.2b x32.exe", kind: "download" },
             { label: "Android", note: "Google Play", url: "https://play.google.com/store/apps/details?id=com.MAIPA.INC.Muppetsg2Company.TheWizards", kind: "store" },
         ],
-        role: "Level & UI Designer & Google Play Integration",
+        role: "Level Designer, UI Designer & Google Play Games Integration",
         team: [
-            { name: "Marceli Antosik", role: "Level & UI Designer & Google Play Integration" },
             { name: "Patryk Antosik", role: "Gameplay Programmer" },
         ],
         info: { engine: "Unity", language: "C#", "version.windows": "3.2b", "version.android": "3.2c" },
         features: [
-            { title: "Event Theme Levels", text: "Complete Event Theme Levels." },
-            { title: "Google Play Games Integration", icon: "googlePlayGames", text: "Earn Achievements for completing levels." },
+            { title: "Four Wizards", icon: "wand", text: "Play as one of four unique wizards." },
+            { title: "Event-Themed Levels", icon: "calendar", text: "Complete special levels themed around events." },
+            { title: "Google Play Games Integration", icon: "googlePlayGames", text: "Unlock achievements as you complete levels." },
         ],
         updated: "2026-03-11",
     },
