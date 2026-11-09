@@ -54,6 +54,319 @@
 
 export const projects = [
     {
+        id: "steamline",
+        title: "Steamline",
+        featured: true,
+        engine: "Unreal Engine",
+        award: "ZTGK 2026 · Game Design finalist",
+        summary: "A logic-based puzzle game where you connect pipes, manage limited resources, and build efficient steam networks to power 19th-century factories.",
+        description: [
+            "**Steamline** is a logic-based puzzle game where you take on the role of an engineer responsible for supplying steam to a 19th-century factory.",
+            "Design and manage a working steam network by solving puzzles and connecting pipes and other components correctly. Each factory has its own steam power requirements, while every boiler room has limited resources at your disposal.",
+            "Your goal is to build an efficient steam system and deliver exactly what each factory needs. Can you keep the machines running?",
+        ],
+        tags: ["Unreal Engine", "Puzzle", "Team", "Windows", "itch.io", "ZTGK"],
+        icon: "assets/img/projects/steamline-icon.webp",
+        cover: "assets/img/projects/steamline-cover.webp",
+        trailer: "https://vimeo.com/1200578322",
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/steamline", kind: "play", primary: true },
+        ],
+        role: "Lead Programmer, Game Design, VFX & 3D Models Integration",
+        team: [
+            { name: "Marceli Antosik", role: "Lead Programmer, Game Design, VFX & 3D Models Integration" },
+            { name: "Grzegorz Ludziejewski", role: "Gameplay Programmer & VFX" },
+            { name: "Jakub Rajczyk", role: "3D Models" },
+            { name: "Magdalena Siuda", role: "3D Models" },
+            { name: "Łukasz Śmieszek", role: "Gameplay Programmer & Music Searcher" },
+        ],
+        info: { 
+            engine: "Unreal Engine",
+            language: "Blueprint · C++",
+            genre: "Puzzle",
+            version: "1.0.7",
+            team: "Ryba Team"
+        },
+        updated: "2026-06-25",
+    },
+
+    {
+        id: "destiny-painter",
+        title: "Destiny Painter",
+        featured: true,
+        engine: "Unity",
+        award: "ZTGK 2025 · Mobile Games finalist",
+        summary: "An arcade-style platformer where you jump between colourful planets, solve colour-based challenges, and paint beautiful murals along the way.",
+        description: [
+            "**Destiny Painter** is an arcade-style game where you leap between colourful planets, leaving a trail of paint behind you.",
+            "You can only land on planets that match your current colour, so every jump requires careful planning. Collect colour changers, avoid dangerous black planets, and find your way to the end of each level. Your precision and the number of jumps you make determine how many stars you earn.",
+            "Each level is a new mural inspired by [**Tauros**](https://lodz.travel/files/public/_processed_/9/4/csm_OPIEMME_-_Jaracza_20__9__efc18b53d2.png) by **Opiemme**, waiting for you to bring it to life with your colourful trail."
+        ],
+        tags: ["Unity", "Arcade", "Android", "Team", "itch.io", "ZTGK"],
+        icon: "assets/img/projects/destiny-painter-icon.webp",
+        cover: "assets/img/projects/destiny-painter-cover.webp",
+        trailer: "https://vimeo.com/1092907356",
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/destiny-painter", kind: "play", primary: true },
+            { label: "Source code", note: "All rights reserved (code)", url: "https://github.com/Muppetsg2/DestinyPainter", kind: "source" }
+        ],
+        role: "Art Lead & VFX & Game Designer",
+        team: [
+            { name: "Marceli Antosik", role: "Art Lead & VFX & Game Designer" },
+            { name: "Patryk Antosik", role: "Player Movement & Animation Programmer" },
+            { name: "Bartłomiej Włodarski", role: "Planets Behaviour Programmer" },
+        ],
+        info: {
+            engine: "Unity",
+            language: "C#",
+            version: "1.0.1",
+            team: "Drop Table - 1",
+        },
+        updated: "github:Muppetsg2/DestinyPainter",
+    },
+
+    {
+        id: "ceo-simulator",
+        title: "CEO Simulator",
+        featured: false,
+        engine: "Unity",
+        award: "ZTGK 2025 · Virtual Environment finalist",
+        summary: "A satirical, low-poly CEO simulator where you make questionable business decisions, manage company resources, and try to keep your employees from starting a riot!",
+        description: [
+            "**CEO Simulator** is a satirical, low-poly management simulator where you step into the shoes of a company's CEO. Your job is to review documents brought in by employees and make important yes-or-no decisions that will shape the company's future.",
+            "You can make your decisions in various creative ways:",
+            "\t- **Red/Green Stamp** – Approve or reject documents.",
+            "\t- **Trapdoor Button** – Send unwanted employees or documents away.",
+            "\t- **Confetti Button** – Celebrate your questionable decisions.",
+            "\t- **\"Good Job\" Sticker** – Reward your employees.",
+            "\t- **\"Good Job\" Sticker** – Reward your employees.",
+            "\t- **Shredder** – Get rid of documents you don't want to deal with.",
+            "\t- **Throw Objects** – Sometimes the simplest solution is to throw things at your employees.",
+            "Every decision affects four key company statistics:",
+            "\t- **Money** – Keep the company financially stable.",
+            "\t- **Production** – Make sure the company keeps running.",
+            "\t- **Employee Satisfaction** – Keep your workforce happy.",
+            "\t- **Law and Order** – Maintain order within the company.",
+            "You can monitor all these statistics on your office computer and try to keep them balanced.",
+            "Your goal is to keep the company running for as long as possible. Make poor decisions, neglect your employees, or let your finances fall apart, and you might face bankruptcy, employee protests, or even a full-blown riot.",
+            "**How long can you survive as CEO?**"
+        ],
+        tags: ["Unity", "VR", "Meta Quest", "Team", "ZTGK"],
+        icon: "assets/img/projects/ceo-simulator-icon.webp",
+        cover: "assets/img/projects/ceo-simulator-cover.webp",
+        trailer: "https://www.youtube.com/watch?v=Ybg7Kx91Qes",
+        links: [
+            { label: "Meta Quest 2 & 3", note: "{ext} · {size}", url: "https://github.com/Muppetsg2/VRGame/releases/download/v1.0.0-ZTGK/CEOSimulator.apk", kind: "download", primary: true },
+            { label: "Source code", note: "All rights reserved (code)", url: "https://github.com/Muppetsg2/VRGame", kind: "source" }
+        ],
+        role: "In Game Computer Behaviour Programming & Platform Compatibility Testing",
+        team: [
+            { name: "Marceli Antosik", role: "In Game Computer Behaviour Programming & Platform Compatibility Testing" },
+            { name: "Patryk Antosik", role: "Stamp Behaviour Programming & Physics Objects Technical Design" },
+            { name: "Bartłomiej Włodarski", role: "Documents & Enviroment Behaviour Programming & Game Designer" },
+            { name: "Maja Ochmańska", role: "Game Designer & Graphics" },
+        ],
+        info: {
+            engine: "Unity",
+            language: "C#",
+            genre: "Simulator",
+            version: "1.0.0",
+            team: "Drop Table",
+        },
+        updated: "github:Muppetsg2/VRGame",
+    },
+
+    {
+        id: "dog-of-war",
+        title: "Dog Of War",
+        featured: false,
+        engine: "Unity",
+        summary: "A roguelike adventure with procedurally generated levels, where you help a cursed dog collect three pieces of a Wishing Star to break free from endless suffering.",
+        description: [
+            "A dog cursed to suffer endlessly seeks hope in a Wishing Star, hoping to finally break free from his torment.",
+            "This is a roguelike game featuring procedurally generated levels. Your goal is to help the dog collect all three pieces of the Wishing Star and finally free himself from his curse.",
+            "Made for **Komiks Game Jam 2k26**, based on the theme *\"Per Aspera Ad Astra\"*."
+        ],
+        tags: ["Unity", "Rougelike", "Windows", "Team", "itch.io", "Game Jam"],
+        icon: "assets/img/projects/dog-of-war-icon.webp",
+        cover: "assets/img/projects/dog-of-war-cover.webp",
+        trailer: "https://www.youtube.com/watch?v=KrlpQl53lzg",
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/dog-of-war", kind: "play", primary: true },
+            { label: "Source code", note: "MIT license (code)", url: "https://github.com/Westesc/KGJ2026", kind: "source" }
+        ],
+        role: "Procedural Generation Programmer & Level Designer",
+        team: [
+            { name: "Marceli Antosik", role: "Procedural Generation Programmer & Level Designer" },
+            { name: "Patryk Antosik", role: "Game Designer & Gameplay Programmer" },
+            { name: "Mikołaj Kisiel", role: "AI Programmer" },
+            { name: "Konrad Karwowski", role: "Graphics" },
+        ],
+        info: {
+            engine: "Unity",
+            language: "C#",
+            version: "1.0",
+            team: "Psy Apokalipsy",
+        },
+        updated: "github:Westesc/KGJ2026",
+    },
+
+    {
+        id: "there-are-signs",
+        title: "There Are Signs",
+        featured: false,
+        engine: "Unity",
+        summary: "A logic-based platformer where you manipulate your surroundings with signs, kick your enemies, and fight your way to popularity in a Japanese school.",
+        description: [
+            "**There Are Signs** is a logic-based platformer where signs are more than just decorations – they're tools you can use to manipulate the environment and change how you move through the world.",
+            "Use your kicks to take down enemies and overcome challenges as you explore Japanese streets and school grounds. Defeat your rivals and take on the school's toughest students to climb the social ladder and become popular!",
+            "Made for **Komiks Game Jam 2k25**, based on the theme *\"There's No Accidents, Only Signs\"*."
+        ],
+        tags: ["Unity", "Platformer", "Windows", "Team", "itch.io", "Game Jam"],
+        icon: "assets/img/projects/there-are-signs-icon.webp",
+        cover: "assets/img/projects/there-are-signs-cover.webp",
+        trailer: "https://www.youtube.com/watch?v=Ybg7Kx91Qes",
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://muppetsg2.itch.io/there-are-signs", kind: "play", primary: true },
+            { label: "Source code", note: "GPL-3.0 license (code)", url: "https://github.com/Muppetsg2/KomiksGJ2025", kind: "source" }
+        ],
+        role: "UI Designer & Narrative System Programmer",
+        team: [
+            { name: "Marceli Antosik", role: "UI Designer & Narrative System Programmer" },
+            { name: "Patryk Antosik", role: "Level Designer & Gameplay Programmer" },
+            { name: "Bartłomiej Włodarski", role: "Narrative Designer, Game Designer & Gameplay Programmer" },
+            { name: "Maja Ochmańska", role: "Game Designer & Graphics" },
+        ],
+        info: {
+            engine: "Unity",
+            language: "C#",
+            version: "1.0",
+            team: "Drop Table",
+        },
+        updated: "github:Muppetsg2/KomiksGJ2025",
+    },
+
+    {
+        id: "bubble-hunt",
+        title: "Bubble Hunt",
+        featured: false,
+        engine: "Unreal Engine",
+        summary: "A first-person action game where you use a bubble gun to capture bugs and feed a hungry monster before becoming its next meal.",
+        description: [
+            "**Bubble Hunt** is a first-person action game where you find yourself trapped in a cave with a giant monster. There's only one way to escape: fulfill the monster's wish by collecting bugs – its favourite snack!",
+            "Armed with a bubble gun, you'll need to trap bugs inside giant bubbles and deliver them to your hungry captor. But it's not going to be easy! The bugs leave a nasty mess that slows you down, they're not exactly friendly, and the monster isn't known for its patience.",
+            "Can you fulfill the monster's appetite before you become its next meal?",
+            "Made for **Global Game Jam 2025**, based on the theme *\"Bubbles\"*."
+        ],
+        tags: ["Unreal Engine", "Action", "Windows", "Team", "itch.io", "Game Jam"],
+        icon: "assets/img/projects/bubble-hunt-icon.webp",
+        cover: "assets/img/projects/bubble-hunt-cover.webp",
+        trailer: "https://vimeo.com/1050905531",
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://agaa3.itch.io/bubble-hunt", kind: "play", primary: true }
+        ],
+        role: "UI Designer & Gameplay Programmer",
+        team: [
+            { name: "Marceli Antosik", role: "UI Designer & Gameplay Programmer" },
+            { name: "Patryk Antosik", role: "AI & Gameplay Programmer" },
+            { name: "Maciej Poncyleusz", role: "VFX & Gameplay Programmer" },
+            { name: "Agata Granosik", role: "Graphics & 3D Models" },
+        ],
+        info: {
+            engine: "Unreal Engine",
+            language: "Blueprints",
+            version: "1.0",
+            team: "Crab Club",
+        },
+        updated: "2025-01-27",
+    },
+
+    {
+        id: "echoes-of-fame",
+        title: "Echoes of Fame",
+        featured: true,
+        engine: "Custom C++20 engine",
+        award: "ZTGK 2024 · Game Development finalist",
+        summary:
+            "Area-control strategy where your band conquers the world with music. Built in 4 months on our own engine, Twin² Engine.",
+        description: [
+            "An area-control strategy game: you lead a band fighting rival teams for influence across a hex map, while a deity watches over you and protects your music.",
+            "We built it in 4 months for courses at Lodz University of Technology — on Twin² Engine, a game engine we wrote ourselves in C++20.",
+        ],
+        tags: ["C++", "Custom Engine", "OpenGL", "Strategy", "Endless Runner", "Team", "Windows", "ZTGK"],
+        icon: "assets/img/projects/echoes-of-fame-icon.webp",
+        cover: "assets/img/projects/echoes-of-fame-cover.webp",
+        trailer: "https://vimeo.com/962661277",
+        links: [
+            { label: "Windows x64", note: "{ext} · {size}", url: "https://github.com/Muppetsg2/Twin-2-Engine/releases/download/v1.2.2-After-Finals/build.zip", kind: "download", primary: true },
+            { label: "Source code", note: "MIT licence (code)", url: "https://github.com/Muppetsg2/Twin-2-Engine", kind: "source" },
+        ],
+        role: "Code Quality & Testing Lead",
+        team: [
+            { name: "Marceli Antosik", role: "Code Quality & Testing Lead" },
+            { name: "Patryk Antosik", role: "AI & UI Programmer" },
+            { name: "Łukasz Gapiński", role: "3D Physics & Procedural Generation" },
+            { name: "Mateusz Gapiński", role: "Rendering" },
+            { name: "Maja Ochmańska", role: "Graphics & 3D Models" },
+        ],
+        info: {
+            engine: "Twin² Engine",
+            language: "C++20",
+            graphics: "OpenGL",
+            version: "1.2.2",
+            team: "Twin²",
+            build: "VS 2022 · CMake",
+            "dev time": "4 months",
+        },
+        features: [
+            { title: "Object-Component model", text: "Unity-style GameObjects & components" },
+            { title: "3D physics", text: "Custom collision system" },
+            { title: "Editor", text: "Scenes, prefabs and debug log" },
+            { title: "Resource managers", text: "Models, textures, audio, fonts" },
+            { title: "UI, input & events", text: "Engine-level systems" },
+            { title: "Procedural maps", text: "Generated hex worlds" },
+        ],
+        stack: ["ImGui", "GLFW", "glm", "assimp", "SoLoud", "FreeType", "yaml-cpp", "spdlog", "Tracy", "stb_image"],
+        updated: "github:Muppetsg2/Twin-2-Engine",
+    },
+
+    {
+        id: "wind-rider",
+        title: "Wind Rider",
+        featured: false,
+        engine: "Unity",
+        award: "ZTGK 2023 · Game Design finalist",
+        summary: "A puzzle-platformer where a paper airplane uses the power of wind to solve puzzles, overcome obstacles, and escape challenging mazes.",
+        description: [
+            "**Wind Rider** is a puzzle-platformer where you take control of a small paper airplane with the power to harness the wind and move objects around. Navigate through enclosed mazes, overcome tricky obstacles, outsmart enemies, and find your way to the exit.",
+            "Not every path will be easy, and you'll probably hit a few walls along the way. Keep experimenting, find creative solutions, and don't give up until you reach your goal!",
+        ],
+        tags: ["Unity", "Platformer", "Puzzle", "Team", "Windows", "Android", "itch.io", "ZTGK"],
+        icon: "assets/img/projects/wind-rider-icon.webp",
+        cover: "assets/img/projects/wind-rider-cover.webp",
+        trailer: null,
+        links: [
+            { label: "Download on itch.io", note: "free", url: "https://thelongcat.itch.io/wind-rider", kind: "play", primary: true },
+            { label: "Source code", note: "MIT licence (code)", url: "https://github.com/MatRyb/Wind-Knight", kind: "source" }
+        ],
+        role: "UI Designer, Gameplay Programmer & Tools Developer",
+        team: [
+            { name: "Marceli Antosik", role: "UI Designer, Gameplay Programmer & Tools Developer" },
+            { name: "Patryk Antosik", role: "Gameplay Programmer & Tools Developer" },
+            { name: "Jakub Biniek", role: "Game & Level Designer" },
+            { name: "Mateusz Rybicki", role: "Gameplay Programmer" },
+            { name: "Katarzyna Tyszka", role: "Graphics" },
+        ],
+        info: {
+            engine: "Unity",
+            language: "C#",
+            version: "1.0",
+            team: "The Long Cat",
+        },
+        updated: "2023-06-29",
+    },
+
+    {
         id: "marry-kiss-kill",
         title: "Marry, Kiss & Kill",
         featured: false,
@@ -66,7 +379,7 @@ export const projects = [
             "\t-❤ **Choose from Celebrities** – let the phone pick from a selection of famous people.",
             "The app is all about having fun together, sharing laughs, and maybe revealing a secret or two. Your choices are never saved or sent anywhere, so you can play with complete privacy!",
         ],
-        tags: ["Unity", "Party", "Android", "Team"],
+        tags: ["Unity", "Party", "Android", "Team", "Google Play"],
         icon: "assets/img/projects/marry-kiss-and-kill-icon.webp",
         cover: "assets/img/projects/marry-kiss-and-kill-cover.webp",
         trailer: null,
@@ -106,7 +419,7 @@ export const projects = [
             "*Each enemy type changes its appearance and stats as the score increases.",
             "**These weapons spawn randomly across the map, giving you an extra advantage in battle.",
         ],
-        tags: ["Unity", "Arcade", "Windows", "Android", "Google Play", "Solo"],
+        tags: ["Unity", "Arcade", "Endless Runner", "Windows", "Android", "Google Play", "Solo"],
         icon: "assets/img/projects/shooter-icon.webp",
         cover: "assets/img/projects/shooter-cover.webp",
         trailer: "https://www.youtube.com/watch?v=d_IHK5qQBHs",
@@ -143,7 +456,7 @@ export const projects = [
             "\t-★ **Story Mode** – Uncover the full story, solve the mystery of the last 7week, and help the dealer collect the debts he's owed.",
             "\t-★ **Endless Mode** – Beat your own high scores or compete with your friends. Survive for as long as you can and see how far you can go!",
         ],
-        tags: ["Unity", "Action", "Space Shooter", "Android", "Google Play", "Team"],
+        tags: ["Unity", "Action", "Space Shooter", "Endless Runner", "Android", "Google Play", "Team"],
         icon: "assets/img/projects/diler-icon.webp",
         cover: "assets/img/projects/diler-cover.webp",
         trailer: "https://www.youtube.com/watch?v=byNMAhhpPEM",
