@@ -1739,7 +1739,8 @@ a.tag-link:hover {
 }
 
 /* ---------- Formatting project texts (richtext.js) ---------- */
-.detail-text p.indent {
+.detail-text p.indent,
+.legal-section p.indent {
   margin: -8px 0 14px calc(var(--level) * 24px);
 }
 
@@ -1770,7 +1771,9 @@ a.tag-link:hover {
 }
 
 .detail-text strong,
-.card-text strong {
+.card-text strong,
+.legal-section strong,
+.legal-contact strong {
   color: var(--text);
 }
 
@@ -1789,4 +1792,9 @@ a.tag-link:hover {
 
 .rich-link strong {
   color: inherit;
+}
+
+.legal-section .rich-list {
+  margin-bottom: 10px;
+  font-size: inherit;
 }

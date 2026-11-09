@@ -10,6 +10,7 @@ import { projects } from "../../data/projects.js";
 import { renderHeader, renderFooter } from "./layout.js";
 import { icon } from "./icons.js";
 import { esc, href, targetAttrs, projectUrl } from "./utils.js";
+import { inlineText, richText } from "./richtext.js";
 
 renderHeader();
 renderFooter();
@@ -67,15 +68,20 @@ function buildSections(template, changes = {}) {
     return sections;
 }
 
-/** First, it escapes the text, then it inserts {fields} from the entry */
+/** Inserts {fields} from the entry ({app} → "Shooter"); unknown {fields} stay as they are.
+    No HTML here yet – inlineText() / richText() escape the text and add the formatting afterwards,
+    so **{app}** or [{email}](mailto:{email}) work too. */
 function fill(text, values) {
-    return esc(text).replace(/\{(\w+)\}/g, (match, name) => (name in values ? esc(values[name]) : match));
+    return String(text ?? "").replace(/\{(\w+)\}/g, (match, name) => (name in values ? values[name] : match));
 }
 
+/** Same rich text as in data/projects.js:
+    title, list, summary, contact → **bold**, *italic*, [link](url)
+    text                          → the above + "\t" indents and "- " / "-❤ " list points */
 function sectionHtml(section, values) {
-    const title = section.title ? `<h2>${fill(section.title, values)}</h2>` : "";
-    const paragraphs = (section.text || []).map((t) => `<p>${fill(t, values)}</p>`).join("");
-    const list = section.list?.length ? `<ul>${section.list.map((t) => `<li>${fill(t, values)}</li>`).join("")}</ul>` : "";
+    const title = section.title ? `<h2>${inlineText(fill(section.title, values))}</h2>` : "";
+    const paragraphs = richText((section.text || []).map((t) => fill(t, values)));
+    const list = section.list?.length ? `<ul>${section.list.map((t) => `<li>${inlineText(fill(t, values))}</li>`).join("")}</ul>` : "";
     return `<section class="legal-section">${title}${paragraphs}${list}</section>`;
 }
 
@@ -90,11 +96,11 @@ function showPolicy(p) {
     document.title = `${p.app} – Privacy Policy`;
     document.getElementById("policy").hidden = false;
     document.getElementById("policy-title").textContent = p.app;
-    document.getElementById("policy-summary").innerHTML = fill(p.summary || template.summary, values);
+    document.getElementById("policy-summary").innerHTML = inlineText(fill(p.summary || template.summary, values));
     document.getElementById("policy-sections").innerHTML = buildSections(template, p.sections)
         .map((s) => sectionHtml(s, values))
         .join("");
-    document.getElementById("policy-contact").innerHTML = fill(p.contact || template.contact, values);
+    document.getElementById("policy-contact").innerHTML = inlineText(fill(p.contact || template.contact, values));
     document.getElementById("policy-mail").href = `mailto:${p.email}`;
 
     const tags = [`effective ${p.effective}`, ...(p.tags || template.tags || [])]
