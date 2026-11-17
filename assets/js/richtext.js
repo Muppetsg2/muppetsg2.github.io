@@ -6,7 +6,7 @@
 
 /*
    summary and description:
-     **bold**   *italics*   [link text](https://…)
+     **bold**   *italics*   `code`   [link text](https://…)
 
    For the description field only, at the beginning of a line:
      "\tText"     – indented line (a tab character creates an indentation)
@@ -23,11 +23,21 @@ import { esc, href, targetAttrs } from "./utils.js";
 
 const LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g; // [text](address)
 
-/** **bold** and *italics* → <strong> / <em> */
+const CODE = /`([^`\n]+)`/; // `code`
+
+/** **bold** and *italics* → <strong> / <em>, `code` → <code>.
+    The text is split at the backticks first, so * inside `code` stays an asterisk */
 function format(text) {
-    return esc(text)
-        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\*(.+?)\*/g, "<em>$1</em>");
+    return String(text ?? "")
+        .split(CODE) // odd parts are the insides of `…`
+        .map((part, i) =>
+            i % 2
+                ? `<code class="rich-code">${esc(part)}</code>`
+                : esc(part)
+                      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+                      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+        )
+        .join("");
 }
 
 /** [text](address) → <a>. Only http(s), mailto, and paths within the site are supported –
@@ -38,7 +48,7 @@ function link(label, url) {
     return `<a class="rich-link" href="${href(url)}"${targetAttrs(url)}>${format(label)}</a>`;
 }
 
-/** Text with **bolding**, *italics*, and [links](…) → HTML. We extract the links first,
+/** Text with **bolding**, *italics*, `code` and [links](…) → HTML. We extract the links first,
     so their addresses remain untouched by both `esc()` and the asterisks */
 export function inlineText(text) {
     const source = String(text ?? "");
@@ -51,10 +61,11 @@ export function inlineText(text) {
     return html + format(source.slice(last));
 }
 
-/** The same text without asterisks or link URLs – for use where HTML is not permitted (e.g., <meta> tags) */
+/** The same text without asterisks, backticks or link URLs – for use where HTML is not permitted (e.g., <meta> tags) */
 export function plainText(text) {
     return String(text ?? "")
         .replace(LINK, "$1")
+        .replace(new RegExp(CODE.source, "g"), "$1")
         .replace(/\*\*(.+?)\*\*/g, "$1")
         .replace(/\*(.+?)\*/g, "$1");
 }

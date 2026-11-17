@@ -62,6 +62,7 @@ export const privacyPolicies = [
         project: "shooter",
         template: "no-data",
     },
+
     {
         id: "calculator-rpg",
         app: "Calculator RPG",
@@ -72,17 +73,19 @@ export const privacyPolicies = [
         store: "https://play.google.com/store/apps/details?id=com.MAIPA.INC.CalculatorRPG",
         template: "no-data",
     },
+
     {
-        id: "marry-kiss-kill",
+        id: "marry-kiss-and-kill",
         app: "Marry, Kiss & Kill",
         provider: "Marceli Antosik & Patryk Antosik",
         email: "marcelipatryk@gmail.com",
         effective: "2026-03-09",
         pricing: "Free",
         store: "https://play.google.com/store/apps/details?id=com.MAIPA.INCandMuppetsg2.MKandK",
-        project: "marry-kiss-kill",
+        project: "marry-kiss-and-kill",
         template: "no-data",
     },
+
     {
         id: "diler",
         app: "Diler - The Last 7Week",
@@ -94,6 +97,7 @@ export const privacyPolicies = [
         project: "diler",
         template: "no-data",
     },
+    
     {
         id: "the-wizards",
         app: "The Wizards",

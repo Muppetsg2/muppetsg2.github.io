@@ -24,6 +24,9 @@ const PATHS = {
     // ---- Get Project Icons ----
     link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
     external: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/>',
+    copy: '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>',
+    check: '<path d="M5 12.5l4.5 4.5L19 7"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
     download: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
     play: '<path d="M8 5v14l11-7z" fill="currentColor"/>',
     phone: '<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/>',
@@ -74,6 +77,9 @@ const PATHS = {
     book: '<path d="M4 19.5V5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zm0 0A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
     infinity: '<path d="M12 12c-2-2.7-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.3 5.5-4zm0 0c2 2.7 3.6 4 5.5 4a4 4 0 0 0 0-8c-1.9 0-3.5 1.3-5.5 4z"/>',
     wand: '<path d="M4 20 15 9"/><path d="M13 7l4 4"/><path d="M19 2.5v4M17 4.5h4M20.5 11v2M19.5 12h2"/>',
+    terminal: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l4 3-4 3M12 15h6"/>',
+    undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+    image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9.5" r="1.5"/><path d="M21 16l-5-5L5 20"/>',
 };
 
 /** Returns the <svg> code. name – name from the list above, size – size in px, extraClass – additional class. */
@@ -96,7 +102,8 @@ export function fillIcons(root = document) {
 /** Which icon corresponds to which type of link (the `kind` field in `projects.js`). */
 export const LINK_ICONS = {
     download: "download",
-    play: "itch",
+    itch: "itch",
+    web: "globe",
     source: "github",
     store: "phone",
     external: "external",

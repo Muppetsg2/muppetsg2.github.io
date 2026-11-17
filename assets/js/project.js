@@ -4,10 +4,11 @@
     =============================================================
 */
 
-import { projects } from "../../data/projects.js";
+import { findEntry, typeOf, TYPE_NAMES } from "./catalog.js";
 import { privacyPolicies } from "../../data/privacy.js";
 import { renderHeader, renderFooter } from "./layout.js";
 import { tagList, primaryLink } from "./cards.js";
+import { codeWindow, addCopyButtons } from "./code.js";
 import { icon, LINK_ICONS } from "./icons.js";
 import { esc, href, targetAttrs, parseVideo } from "./utils.js";
 import { richText, inlineText } from "./richtext.js";
@@ -15,7 +16,7 @@ import { showUpdated } from "./updated.js";
 import { noteNow, fillDownloadNotes } from "./downloads.js";
 
 const id = new URLSearchParams(location.search).get("id");
-const project = projects.find((x) => x.id === id);
+const project = findEntry(id); // a game, an app or a library
 const main = document.getElementById("project");
 
 renderHeader();
@@ -37,6 +38,7 @@ function renderNotFound() {
 
 function renderProject(p) {
     document.title = `${p.title} – Muppetsg2`;
+    const type = typeOf(p);
 
     // Trailer as a "facade": an image plus a button. The player loads only after being clicked.
     const video = parseVideo(p.trailer);
@@ -50,9 +52,21 @@ function renderProject(p) {
             <button type="button" class="video-play" aria-label="Play ${esc(p.title)} trailer">${icon("play", 36)}</button>
             <span class="badge badge-dark">${video.provider} · trailer</span>
         </div>`
-    : `<div class="video is-static">${posterImg}</div>`;
+    : poster || type !== "library"
+        ? `<div class="video is-static">${posterImg}</div>`
+        : ""; // a library without a cover – the code example is enough
 
     const description = richText(p.description || [p.summary]);
+
+    // Libraries: usage example and installation. The field can be one block or an array of blocks.
+    const codeSection = (title, blocks) =>
+        blocks.length
+            ? `<section class="detail-text">
+                <p class="eyebrow">// ${title}</p>
+                ${blocks.map((b) => (b.text ? `<p>${inlineText(b.text)}</p>` : "") + codeWindow(b)).join("")}
+            </section>`
+            : "";
+    const code = codeSection("example", [].concat(p.example || [])) + codeSection("installation", [].concat(p.install || []));
 
     const policy = privacyPolicies.find((x) => x.project === p.id);
     const policyLink = policy
@@ -117,7 +131,7 @@ function renderProject(p) {
         <a class="back-link" href="index.html#projects">${icon("arrowLeft", 16)} cd ../projects</a>
 
         <header class="detail-head">
-            ${p.icon ? `<img class="detail-icon" src="${href(p.icon)}" alt="" width="88" height="88">` : ""}
+            ${p.icon ? `<img class="detail-icon${type === "library" ? " is-logo" : ""}" src="${href(p.icon)}" alt="" width="88" height="88">` : ""}
             <div>
                 ${p.award ? `<p class="award">★ ${esc(p.award)}</p>` : ""}
                 <h1>${esc(p.title)}</h1>
@@ -129,15 +143,16 @@ function renderProject(p) {
             <div class="detail-main">
                 ${media}
                 <section class="detail-text">
-                    <p class="eyebrow">// about the game</p>
+                    <p class="eyebrow">// about the ${TYPE_NAMES[type].toLowerCase()}</p>
                     ${description}
                 </section>
                 ${features}
+                ${code}
             </div>
 
             <aside class="detail-side">
                 <div class="panel">
-                    <h2 class="panel-title">Download</h2>
+                    <h2 class="panel-title">${type === "library" ? "Links" : "Download"}</h2>
                     <div class="download-list">${links}</div>
                     ${info}
                     ${policyLink}
@@ -149,6 +164,7 @@ function renderProject(p) {
 
     fillDownloadNotes(main);
     showUpdated(p.updated);
+    addCopyButtons(main); // "Copy" buttons on the library examples
 }
 
 document.addEventListener("click", (e) => {

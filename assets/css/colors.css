@@ -63,6 +63,8 @@
   --placeholder-from: #2c2238;
   --placeholder-to: #120f18;
   --placeholder-text: var(--creamy);
+  --logo-plate: light-dark(#efedf4, var(--black-gray));
+  --logo-placeholder: light-dark(var(--placeholder-from), var(--creamy));
 
   /* ---------- Code window (always dark, like an IDE) ---------- */
   --code-bg: #16131e;
@@ -75,6 +77,7 @@
   --code-keyword: #ff5cf0;
   --code-branch-keyword: #c79bff;
   --code-preprocessor: var(--light-gray);
+  --code-macro: #ff8fc7;
   --code-class: var(--yellow);
   --code-namespace: var(--creamy);
   --code-variable: var(--creamy);

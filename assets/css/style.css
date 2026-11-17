@@ -189,6 +189,7 @@ p {
 .k  { color: var(--code-keyword); }          /* keyword */
 .bk { color: var(--code-branch-keyword); }   /* branch keyword */
 .p  { color: var(--code-preprocessor); }     /* preprocessor */
+.m  { color: var(--code-macro); }            /* macro, ALL_CAPS constant */
 .cs { color: var(--code-class); }            /* class */
 .c  { color: var(--code-comment); }          /* comment */
 .f  { color: var(--code-function); }         /* function */
@@ -1794,7 +1795,213 @@ a.tag-link:hover {
   color: inherit;
 }
 
+/* `code` in project texts */
+.rich-code {
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  white-space: nowrap; /* short names like .vox don't break in half */
+}
+
+.rich-link .rich-code {
+  color: inherit;
+}
+
 .legal-section .rich-list {
   margin-bottom: 10px;
   font-size: inherit;
+}
+
+/* ---------- Games, apps and libraries ---------- */
+.badge-type {
+  left: auto;
+  right: 16px;
+  top: 16px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 56px 0 20px;
+  font-size: 24px;
+}
+
+.group-title:first-child {
+  margin-top: 8px;
+}
+
+.group-title .tag-count {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Library logo: any proportions, shown whole (contain), on a dark or light plate */
+.card-media > img.media-icon.is-logo {
+  width: auto;
+  height: 52%;
+  max-width: 72%;
+  padding: 16px 20px;
+  object-fit: contain;
+  background: var(--logo-plate);
+}
+
+.detail-icon.is-logo {
+  width: auto;
+  max-width: 200px;
+  padding: 12px 16px;
+  object-fit: contain;
+  background: var(--logo-plate);
+}
+
+.library-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.library-logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 56px;
+  height: 56px;
+  padding: 8px;
+  border-radius: 14px;
+  background: var(--logo-plate);
+  color: var(--logo-placeholder);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.library-logo img {
+  width: auto;
+  height: auto;
+  max-width: 96px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.badge-star.is-inline {
+  position: static;
+  margin-bottom: 6px;
+}
+
+.library-lang {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Code example on a library subpage */
+.code-window.is-example {
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.code-window.is-example pre {
+  font-size: 13.5px;
+  line-height: 1.7;
+  tab-size: 4;
+}
+
+@media (max-width: 560px) {
+  .project-grid .card-library .card-media {
+    display: none; /* on the list the logo is enough */
+  }
+
+  .project-grid .library-logo {
+    min-width: 64px;
+    height: 64px;
+  }
+
+  .project-grid .library-logo img {
+    max-height: 48px;
+  }
+
+  .project-grid .badge-star {
+    display: grid;
+    place-items: center;
+    left: 4px;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+  }
+
+  .project-grid .badge-label {
+    display: none;
+  }
+
+  .project-grid .library-head {
+    position: relative;
+  }
+
+  .project-grid .badge-star.is-inline {
+    position: absolute;
+    top: calc(50% - 28px);
+    margin: 0;
+  }
+}
+
+/* ---------- "Copy" button on code windows (code.js) ---------- */
+.code-body {
+  position: relative; /* the button is placed relative to the code, under the bar */
+}
+
+.code-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid var(--code-border);
+  border-radius: 8px;
+  background: var(--code-bar);
+  color: var(--code-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0; /* hidden until the mouse is over the window */
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.code-window:hover .code-copy,
+.code-copy:focus-visible,
+.code-copy.is-done {
+  opacity: 1;
+}
+
+.code-copy:hover {
+  border-color: var(--code-muted);
+  color: var(--code-text);
+}
+
+.code-copy.is-done {
+  color: var(--code-string); /* green "Copied" */
+}
+
+/* Phones and tablets have no hover – the button is always visible there */
+@media (hover: none) {
+  .code-copy {
+    opacity: 1;
+  }
 }
